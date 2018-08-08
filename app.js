@@ -1,5 +1,18 @@
 //app.js
 App({
+
+  globalData: {
+    userInfo:         null,
+    school:           "",
+    home :            "",
+    shcoolLongitude:  0.0,
+    schoolLatitude:   0.0,
+    homeLongitude:    0.0,
+    homeLatitude:     0.0,
+    parentName:       "",
+    parentMobile:     "",
+  },
+
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
@@ -10,11 +23,14 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        console.log("wx.login() success")
       }
     })
+    
     // 获取用户信息
     wx.getSetting({
       success: res => {
+        console.log("wx.getSetting() success")
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({
@@ -32,8 +48,5 @@ App({
         }
       }
     })
-  },
-  globalData: {
-    userInfo: null
   }
 })

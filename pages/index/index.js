@@ -2,19 +2,27 @@
 //获取应用实例
 const app = getApp()
 
+
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    motto:        '本市已经有2943个家庭匹配成功',
+    userInfo:     {},
+    hasUserInfo:  false,
+    canIUse:      wx.canIUse('button.open-type.getUserInfo'),
+    parentname:   '',
+    school:       '',
+    home:         '',
+    mobile:       '',
+    sugData:      ''
   },
+  
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
+
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
@@ -40,9 +48,10 @@ Page({
             hasUserInfo: true
           })
         }
-      })
+      }) 
     }
-  },
+  }, 
+
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -50,5 +59,21 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+
+  bindInputFocus: function() {
+    var page = this.getCurrentPageUrl()
+    console.log(page)
+    wx.navigateTo({
+      url: '../search/search'
+    })
+  },
+
+  getCurrentPageUrl : function (){
+    var pages = getCurrentPages() //获取加载的页面
+    var currentPage = pages[pages.length - 1] //获取当前页面的对象
+    var url = currentPage.route //当前页面url
+    return url
   }
+
 })
