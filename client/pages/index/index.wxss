@@ -36,6 +36,7 @@
   height: 60rpx;
   border: 1px solid;
   border-radius:10rpx;
+  border-color:#444444;
 }
 
 .input_title {

@@ -16,54 +16,56 @@
             </view>
             <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
         </view>
+
+
         <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
             <navigator url="../index/index" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
+                <view class="weui-cell__bd" id="sr0" bindtap="searchResultTap">
                     <view>{{searchResult[0]}}</view>
                 </view>
             </navigator>
             <navigator url="../index/index" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
+                <view class="weui-cell__bd" id="sr1" bindtap="searchResultTap">
                     <view>{{searchResult[1]}}</view>
                 </view>
             </navigator>
             <navigator url="../index/index" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
+                <view class="weui-cell__bd" id="sr2" bindtap="searchResultTap">
                     <view>{{searchResult[2]}}</view>
                 </view>
             </navigator>
             <navigator url="../index/index" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
+                <view class="weui-cell__bd" id="sr3" bindtap="searchResultTap">
                     <view>{{searchResult[3]}}</view>
                 </view>
             </navigator>
             <navigator url="../index/index" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
+                <view class="weui-cell__bd" id="sr4" bindtap="searchResultTap">
                     <view>{{searchResult[4]}}</view>
                 </view>
             </navigator>
             <navigator url="../index/index" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
+                <view class="weui-cell__bd" id="sr5" bindtap="searchResultTap">
                     <view>{{searchResult[5]}}</view>
                 </view>
             </navigator>
             <navigator url="../index/index" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
+                <view class="weui-cell__bd" id="sr6" bindtap="searchResultTap">
                     <view>{{searchResult[6]}}</view>
                 </view>
             </navigator>
             <navigator url="../index/index" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
+                <view class="weui-cell__bd" id="sr7" bindtap="searchResultTap">
                     <view>{{searchResult[7]}}</view>
                 </view>
             </navigator>
             <navigator url="../index/index" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
+                <view class="weui-cell__bd" id="sr8" bindtap="searchResultTap">
                     <view>{{searchResult[8]}}</view>
                 </view>
             </navigator>
             <navigator url="../index/index" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
+                <view class="weui-cell__bd" id="sr9" bindtap="searchResultTap">
                     <view>{{searchResult[9]}}</view>
                 </view>
             </navigator>
