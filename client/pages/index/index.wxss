@@ -65,6 +65,7 @@
   /* border-radius: 2px; */
   color: #000;
   /* background: rgba(0,0,0,.15); */
+  /* border-color:#444444; */
 }
 
 .input_title {
