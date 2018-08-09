@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+  <view class="intro">2个家庭合作接送孩子上下学，节省一半工作量。匹配在同一学校上学且家庭住址距离小于3km的2个家庭，每家负责接送孩子一周
+  </view>
+  <view class="flex-wrp">
+    <text class="input_title">孩子学校</text>
+    <input class="input_item" bindfocus="bindInputFocus" placeholder="学校名称" />
+  </view>
+  <view class="flex-wrp">居住小区
+    <input class="input_item" bindfocus="bindInputFocus" placeholder="小区名称" />
+  </view>
+  <view class="flex-wrp">
+    <text class="input_title">家长姓名</text>
+    <input class="input_item" bindinput="bindReplaceInput" placeholder="姓名" />
+  </view>
+  <view class="flex-wrp">手机号码
+    <input class="input_item" placeholder="匹配成功后联系" />
+  </view>
+  
+  <button type="primary" class="match-button">开始匹配</button>
+  
+  <view class="sug_info"> 
+    <text>{{sugData}}</text> 
+  </view>
+
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
