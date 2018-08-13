@@ -9,11 +9,10 @@ Page({
     userInfo:     {},
     hasUserInfo:  false,
     canIUse:      wx.canIUse('button.open-type.getUserInfo'),
-    parentname:   '',
     school:       '',
     home:         '',
+    parentName:   '',
     mobile:       '',
-    sugData:      ''
   },
   
   //事件处理函数
@@ -61,19 +60,27 @@ Page({
     })
   },
 
-  bindInputFocus: function() {
-    var page = this.getCurrentPageUrl()
-    console.log(page)
+  bindInputFocus: function(event) {
+    console.log(event)
+    app.globalData.inputStatus = event.currentTarget.id
     wx.navigateTo({
       url: '../search/search'
     })
   },
 
   getCurrentPageUrl : function (){
-    var pages = getCurrentPages() //获取加载的页面
-    var currentPage = pages[pages.length - 1] //获取当前页面的对象
-    var url = currentPage.route //当前页面url
+    var pages = getCurrentPages()                 //获取加载的页面
+    var currentPage = pages[pages.length - 1]     //获取当前页面的对象
+    var url = currentPage.route                   //当前页面url
     return url
-  }
+  },
 
+  // 生命周期函数--监听页面显示
+  onShow: function () {
+    // 显示app.globalData
+    this.setData({school : app.globalData.school.name})
+    this.setData({home : app.globalData.home.name})
+    //this.setData({parentName : app.globalData})
+    //this.setData({mobile : app.globalData.school.name})
+  },
 })

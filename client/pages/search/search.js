@@ -5,10 +5,8 @@ Page({
 
   //页面的初始数据
   data: {
-    location: '',
     inputShowed: false,
     inputVal: "",
-    searchResult: ['', '', '', '', '', '', '', '', '', '']
   }, 
 
   showInput: function () {
@@ -56,32 +54,26 @@ Page({
 
     var success = function (data) {
 
-      var sugData = '';
       var sr = ['', '', '', '', '', '', '', '', '', ''];
       var maxLength = data.result.length < 10 ? data.result.length : 10;
 
       for (var i = 0; i < data.result.length; i++) {
-        sugData = sugData + data.result[i].name + '\n';
         sr[i] = data.result[i].name;
       };
 
+      // 数组深拷贝
       app.globalData.searchResult = data.result.concat();
 
       //console.log(app.globalData.searchResult)
 
       that.setData({ searchResult: sr });
-
-      that.setData({
-        sugData: sugData
-      });
-
     };
 
     // 发起suggestion检索请求 
     BMap.suggestion({
       query: e.detail.value,
       region: '北京',
-      city_limit: true,
+      city_limit: false,
       fail: fail,
       success: success
     });
@@ -89,10 +81,23 @@ Page({
 
   // 百度地图热词搜索结果被点击后的回调函数
   searchResultTap: function(event) {
+
     var index = event.currentTarget.id
     var i = parseInt(index.substr(2))
-    console.log(event)
-    console.log(i)
+    console.log(app.globalData.searchResult)
+    if (app.globalData.inputStatus == "school") {
+      app.globalData.school.name = app.globalData.searchResult[i].name
+      app.globalData.school.longitude = app.globalData.searchResult[i].location.lng
+      app.globalData.school.latitude = app.globalData.searchResult[i].location.lat
+    }
+    else if (app.globalData.inputStatus == "home") {
+      app.globalData.home.name = app.globalData.searchResult[i].name
+      app.globalData.home.longitude = app.globalData.searchResult[i].location.lng
+      app.globalData.home.latitude = app.globalData.searchResult[i].location.lat
+    }
+    else {
+      console.log("input status error!")
+    }
   },
 
   navigator2url:function(){
@@ -106,8 +111,6 @@ Page({
       }
     })
   },
-
-
 
   // 生命周期函数--监听页面加载
   onLoad: function (options) {

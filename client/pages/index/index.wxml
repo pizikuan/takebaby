@@ -12,12 +12,12 @@
   </view>
   <view class="flex-wrp">
     <text class="input_title">孩子学校</text>
-    <input class="input_item" bindtap="bindInputFocus" placeholder="学校名称" disabled="disabled" />
+    <input class="input_item" id="school" bindtap="bindInputFocus" value="{{school}}" placeholder="城市+学校名称" disabled="disabled" />
     <!-- <input disabled="disabled" name="area" placeholder="小区/写字楼/学校等" bindtap="bindInputFocus" value="{{address}}" /> -->
   </view>
   <view class="flex-wrp">
     <text class="input_title">居住小区</text>
-    <input class="input_item" bindtap="bindInputFocus" placeholder="小区名称" disabled="disabled" />
+    <input class="input_item"  id="home" bindtap="bindInputFocus" value="{{home}}" placeholder="城市+小区名称" disabled="disabled" />
   </view>
   <view class="flex-wrp">
     <text class="input_title">家长姓名</text>
