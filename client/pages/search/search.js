@@ -82,12 +82,25 @@ Page({
 
   // 百度地图热词搜索结果被点击后的回调函数
   searchResultTap: function(event) {
-    //console.log(event)
+    // console.log("执行")
     var index = event.currentTarget.id
     var i = parseInt(index.substr(2))
-    //console.log(index)
+    console.log(event)
 
   },
+
+  navigator2url:function(){
+    wx.switchTab({
+      url: "../index/index",
+      success: function () {
+        console.log('跳转到news页面成功')// success              
+      },
+      fail: function () {
+        console.log('跳转到news页面失败')//fail
+      }
+    })
+  },
+
 
   // 生命周期函数--监听页面加载
   onLoad: function (options) {
