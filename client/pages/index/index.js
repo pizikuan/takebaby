@@ -74,6 +74,28 @@ Page({
     var currentPage = pages[pages.length - 1] //获取当前页面的对象
     var url = currentPage.route //当前页面url
     return url
-  }
+  },
+
+  //表单提交方法
+  formSubmit: function (e) {
+    var adds = e.detail.value;
+    console.log(adds);
+    wx.request({
+      url: 'http://127.0.0.1:8888/api/json/match',
+      data: adds,
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {// 设置请求的 header
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log(JSON.stringify(res.data))
+      },
+      fail: function (res) {
+        console.log('cuowu' + ':' + res)
+      }
+    })
+
+  },
+
 
 })
