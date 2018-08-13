@@ -25,7 +25,7 @@
   </view>
 
   <view class="flex-wrp">
-    <text class="input_title">手机号码</text>
+    <text class="input_title">微信号码</text>
     <input class="input_item" placeholder="匹配成功后联系" />
   </view>
 

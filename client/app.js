@@ -11,6 +11,7 @@ App({
     homeLatitude:     0.0,
     parentName:       "",
     parentMobile:     "",
+    searchResult:     Array[10]
   },
 
   onLaunch: function () {
