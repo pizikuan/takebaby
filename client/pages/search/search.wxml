@@ -16,8 +16,6 @@
             </view>
             <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
         </view>
-
-
         <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
             <navigator url="../index/index" class="weui-cell" hover-class="weui-cell_active" bindtap="navigator2url">
                 <view class="weui-cell__bd" id="sr0" bindtap="searchResultTap">

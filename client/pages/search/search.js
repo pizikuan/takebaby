@@ -8,7 +8,7 @@ Page({
     location: '',
     inputShowed: false,
     inputVal: "",
-    searchResult: ['', '', '', '', '', '', '', '', '', ''],
+    searchResult: ['', '', '', '', '', '', '', '', '', '']
   }, 
 
   showInput: function () {
@@ -56,17 +56,20 @@ Page({
 
     var success = function (data) {
 
+      var sugData = '';
       var sr = ['', '', '', '', '', '', '', '', '', ''];
       var maxLength = data.result.length < 10 ? data.result.length : 10;
-      var res = Array[10]
-
-      res = data.result.concat();
 
       for (var i = 0; i < data.result.length; i++) {
+        sugData = sugData + data.result[i].name + '\n';
         sr[i] = data.result[i].name;
       };
 
       that.setData({ searchResult: sr });
+
+      that.setData({
+        sugData: sugData
+      });
 
     };
 
@@ -102,42 +105,59 @@ Page({
   },
 
 
-  // 生命周期函数--监听页面加载
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
   
   },
 
-  // 生命周期函数--监听页面初次渲染完成
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
   onReady: function () {
   
   },
 
-  // 生命周期函数--监听页面显示
+  /**
+   * 生命周期函数--监听页面显示
+   */
   onShow: function () {
   
   },
 
-  // 生命周期函数--监听页面隐藏
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
   onHide: function () {
   
   },
 
-  // 生命周期函数--监听页面卸载
+  /**
+   * 生命周期函数--监听页面卸载
+   */
   onUnload: function () {
   
   },
 
-  // 页面相关事件处理函数--监听用户下拉动作
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
   onPullDownRefresh: function () {
   
   },
 
-  // 页面上拉触底事件的处理函数
+  /**
+   * 页面上拉触底事件的处理函数
+   */
   onReachBottom: function () {
   
   },
 
-  // 用户点击右上角分享
+  /**
+   * 用户点击右上角分享
+   */
   onShareAppMessage: function () {
   
   }
