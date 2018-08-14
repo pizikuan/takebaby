@@ -11,25 +11,5 @@
     "navigationBarBackgroundColor": "#F8F8F8",
     "navigationBarTitleText": "接娃宝",
     "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "color": "#000",
-    "selectedColor": "#56abe4",
-    "backgroundColor": "#fff",
-    "borderStyle": "white",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "images/node.png",
-        "selectedIconPath": "images/node_on.png"
-      },
-      {
-        "pagePath": "pages/match/match",
-        "text": "匹配",
-        "iconPath": "images/latest.png",
-        "selectedIconPath": "images/lastest_on.png"
-      }
-    ]
   }
 }
