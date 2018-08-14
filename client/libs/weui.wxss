@@ -62,7 +62,7 @@ icon {
 }
 
 .weui-cell {
-  padding: 10px 15px;
+  padding: 20rpx 40rpx 20rpx 40rpx;
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;

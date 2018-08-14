@@ -47,49 +47,38 @@
 //   }
 // })
 
-// latest.js
 // var Api = require('../../utils/api.js');
 
 Page({
   data: {
     title: '匹配',
-    latest: [],
+    matchRes: [],
     hidden: false
   },
 
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
     this.fetchData();
     console.log('onPullDownRefresh', new Date())
   },
 
   // 事件处理函数
-  redictDetail: function (e) {
+  redictDetail: function(e) {
     var id = e.currentTarget.id,
       url = '../detail/detail?id=' + id;
 
-    wx.navigateTo({
-      url: url
-    })
+    wx.navigateTo({url: url})
   },
 
   fetchData: function () {
     var that = this;
-    that.setData({
-      hidden: false
-    })
+    that.setData({hidden: false})
     wx.request({
-      url: Api.GET_INDEX({
-        p: 1
-      }),
+      url: Api.GET_INDEX({p: 1}),
       success: function (res) {
         console.log(res);
-        that.setData({
-          latest: res.data
-        })
+        that.setData({matchRes: res.data})
         setTimeout(function () {
-          that.setData({
-            hidden: true
-          })
+          that.setData({hidden: true})
         }, 300)
       }
     })

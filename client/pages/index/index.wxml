@@ -43,5 +43,10 @@
       <text>{{motto}} </text>
     </view>
 
+    <view class="sug_info">
+    
+    </view>
+  
+
   </view>
 </form>

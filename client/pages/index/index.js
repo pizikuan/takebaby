@@ -92,17 +92,17 @@ Page({
 
     console.log(adds);
     wx.request({
-      url: 'http://127.0.0.1:8888/api/json/match',
+      url: 'http://192.168.51.10:8888/api/json/match',
       data: { "userinfo": JSON.stringify(adds), "code": app.globalData.code },
-      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      header: {// 设置请求的 header
+      method: 'POST',          // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {                // 设置请求的 header
         'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
         console.log(JSON.stringify(res.data))
       },
       fail: function (res) {
-        console.log('cuowu' + ':' + res)
+        console.log('error: ' + res)
       }
     })
   },
