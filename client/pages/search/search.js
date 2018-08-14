@@ -1,4 +1,4 @@
-var bmap = require('../../libs/bmap-wx.js'); 
+var bmap = require('../../libs/bmap-wx.js');
 const app = getApp()
 
 Page({
@@ -7,7 +7,7 @@ Page({
   data: {
     inputShowed: false,
     inputVal: "",
-  }, 
+  },
 
   showInput: function () {
     this.setData({
@@ -80,7 +80,7 @@ Page({
   },
 
   // 百度地图热词搜索结果被点击后的回调函数
-  searchResultTap: function(event) {
+  searchResultTap: function (event) {
 
     var index = event.currentTarget.id
     var i = parseInt(index.substr(2))
@@ -100,55 +100,55 @@ Page({
     }
   },
 
-  navigator2url:function(){
+  navigator2url: function () {
     wx.switchTab({
       url: "../index/index",
       success: function () {
-        console.log('跳转到news页面成功')// success              
+        console.log('跳转到index页面成功')// success              
       },
       fail: function () {
-        console.log('跳转到news页面失败')//fail
+        console.log('跳转到index页面失败')//fail
       }
     })
   },
 
   // 生命周期函数--监听页面加载
   onLoad: function (options) {
-  
+
   },
 
   // 生命周期函数--监听页面初次渲染完成
   onReady: function () {
-  
+
   },
 
   // 生命周期函数--监听页面显示
   onShow: function () {
-  
+
   },
 
   // 生命周期函数--监听页面隐藏
   onHide: function () {
-  
+
   },
 
   // 生命周期函数--监听页面卸载
   onUnload: function () {
-  
+
   },
 
   // 页面相关事件处理函数--监听用户下拉动作
   onPullDownRefresh: function () {
-  
+
   },
 
   // 页面上拉触底事件的处理函数
   onReachBottom: function () {
-  
+
   },
 
   // 用户点击右上角分享
   onShareAppMessage: function () {
-  
+
   }
 })

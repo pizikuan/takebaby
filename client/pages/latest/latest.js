@@ -15,7 +15,7 @@
 //   redictDetail: function(e) {
 //     var id = e.currentTarget.id,
 //       url = '../detail/detail?id=' + id;
-      
+
 //     wx.navigateTo({
 //       url: url
 //     })
@@ -56,10 +56,12 @@ Page({
     latest: [],
     hidden: false
   },
+
   onPullDownRefresh: function () {
     this.fetchData();
     console.log('onPullDownRefresh', new Date())
   },
+
   // 事件处理函数
   redictDetail: function (e) {
     var id = e.currentTarget.id,
@@ -69,6 +71,7 @@ Page({
       url: url
     })
   },
+
   fetchData: function () {
     var that = this;
     that.setData({
@@ -91,7 +94,9 @@ Page({
       }
     })
   },
+
   onLoad: function () {
     this.fetchData();
   }
+
 })

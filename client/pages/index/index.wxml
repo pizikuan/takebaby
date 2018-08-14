@@ -16,7 +16,7 @@
   </view>
   <view class="flex-wrp">
     <text class="input_title">居住小区</text>
-    <input class="input_item"  id="home" bindtap="bindInputFocus" value="{{home}}" placeholder="城市+小区名称" placeholder-class="input_placeholder" disabled="disabled" />
+    <input class="input_item" id="home" bindtap="bindInputFocus" value="{{home}}" placeholder="城市+小区名称" placeholder-class="input_placeholder" disabled="disabled" />
   </view>
   <view class="flex-wrp">
     <text class="input_title">家长姓名</text>
@@ -36,10 +36,10 @@
   <view>
     <button type="primary" class="match-button" bindtap="bindMatch">开始匹配</button>
   </view>
-  
-  
-  <view class="sug_info"> 
-    <text>{{sugData}}</text> 
+
+
+  <view class="sug_info">
+    <text>{{sugData}}</text>
   </view>
 
   <view class="usermotto">
