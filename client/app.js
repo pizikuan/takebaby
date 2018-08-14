@@ -3,8 +3,6 @@ App({
 
   globalData: {
     userInfo:         null,
-    school:           "",
-    home :            "",
     shcoolLongitude:  0.0,
     schoolLatitude:   0.0,
     homeLongitude:    0.0,
@@ -13,6 +11,10 @@ App({
     parentMobile:     "",
     searchResult:     Array[10],
     code:             "",
+    school:           {name: "", longitude: 0.0, latitude: 0.0},
+    home:             {name: "", longitude: 0.0, latitude: 0.0},
+    searchResult:     Array[10],
+    inputStatus:      ""
   },
 
   onLaunch: function () {
