@@ -1,4 +1,3 @@
-
 .match-flex {
   display: -webkit-flex;
   /*border: 1rpx solid black;*/
@@ -12,18 +11,19 @@
   line-height: 120rpx;
   margin: auto;
   padding-left: 20rpx;
-  color:black;
+  color: black;
 }
 
 .match-middle-block {
   width: 70%;
-  font-size: 85%;
+  font-size: 100%;
   margin: auto;
 }
+
 .match-middle-upper {
   position: relative;
   /*border: 1rpx solid black;*/
-  padding: 10rpx 0rpx;
+  padding: 10rpx 0rpx 10rpx 5%;
   font-weight: bold;
   font-size: 125%;
 }
@@ -31,31 +31,29 @@
 .match-middle-item {
   position: relative;
   /*border: 1rpx solid black;*/
-  padding: 8rpx 0rpx;
-  color:#444
+  padding: 10rpx 0rpx 0rpx 5%;
+  color: #444;
 }
-
 
 .match-right-block {
   position: relative;
-  border: 1rpx solid green;
+  border: 1px solid green;
   border-radius: 20rpx;
   width: 100rpx;
   height: 40rpx;
-  font-size: 75%;
+  font-size: 80%;
   margin: auto;
   margin-right: 40rpx;
-  color:#777;
+  color: #777;
   text-align: center;
 }
 
-
 .footer_line {
-  height:1px;
-  width:94%;
-  background:#888;
-  overflow:hidden;
-  margin: 10rpx 3%;
+  height: 1px;
+  width: 90%;
+  background: #888;
+  overflow: hidden;
+  margin: 20rpx 5%;
 }
 
 .guide-info {
@@ -64,4 +62,9 @@
   color: #09f;
   margin-top: 60rpx;
   text-align: center;
+}
+
+.suggestion {
+  color: #444;
+  padding: 10%;
 }

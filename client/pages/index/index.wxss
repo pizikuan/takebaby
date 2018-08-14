@@ -202,11 +202,12 @@ page {
   font-size: 80%;
   color: #09f;
   margin-top: 60rpx;
+  text-align: center;
 }
 
 .sug_info {
   position: relative;
-  margin-top: 20rpx;
+  margin-top: 40rpx;
   font-size: 80%;
   color:#888;
 }

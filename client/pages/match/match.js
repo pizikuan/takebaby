@@ -49,11 +49,13 @@
 
 // var Api = require('../../utils/api.js');
 
+var app=getApp()
+
 Page({
   data: {
     title: '匹配',
     matchRes: [],
-    hidden: false
+    hidden: 'true'
   },
 
   onPullDownRefresh: function() {
@@ -86,6 +88,7 @@ Page({
 
   onLoad: function () {
     this.fetchData();
+    console.log(app.globalData.hidden)
   }
 
 })

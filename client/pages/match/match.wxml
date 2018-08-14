@@ -18,10 +18,10 @@
   </block>
 </view>
 
+<view class="suggestion">未发现合适的家庭，
+请点击右上角，将小程序分享到学校群、班级群、朋友圈，可极大地提升匹配概率，
+匹配成功后会通过微信消息提醒您</view>
+
 <navigator class="guide-info" url="../guide/guide">流程指引</navigator>
 
-
-
-<!--loading hidden="{{hidden}}">
-  加载中...
-</loading-->
+<loading hidden="true">匹配中...</loading>
