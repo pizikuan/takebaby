@@ -195,3 +195,10 @@ page {
   font-weight: bold;
   margin-left: 5px;
 }
+
+.sug_info {
+  position: relative;
+  margin-top: 60rpx;
+  font-size: 80%;
+  color:#888;
+}

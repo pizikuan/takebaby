@@ -36,8 +36,10 @@
     <view>
       <button type="primary" class="match-button" bindtap="bindMatch">开始匹配</button>
     </view>
+
     <view class="sug_info">
-      <text>{{sugData}}</text>
+      <text>{{motto}}</text>
     </view>
+    
   </view>
 </form>

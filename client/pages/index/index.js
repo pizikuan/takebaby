@@ -3,7 +3,6 @@ const app = getApp()
 
 Page({
   data: {
-    motto: '本市已经有2943个家庭匹配成功',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
@@ -12,6 +11,7 @@ Page({
     parentName: '', 
     wechat: '',
     mobile: '',
+    motto: '本市已经有2943个家庭匹配成功',
   },
 
   //事件处理函数
