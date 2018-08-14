@@ -37,10 +37,11 @@
       <button type="primary" class="match-button" bindtap="bindMatch">开始匹配</button>
     </view>
 
+    <navigator class="guide-info" url="../guide/guide">流程指引</navigator>
+
     <view class="sug_info">
       <text>{{motto}} </text>
     </view>
 
-    <navigator url="https://shimo.im/docs/S2c5Okq6mLsL7vx4">接娃指引</navigator>
   </view>
 </form>

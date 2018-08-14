@@ -196,9 +196,16 @@ page {
   margin-left: 5px;
 }
 
+.guide-info {
+  position: relative;
+  font-size: 80%;
+  color: #09f;
+  margin-top: 60rpx;
+}
+
 .sug_info {
   position: relative;
-  margin-top: 60rpx;
+  margin-top: 20rpx;
   font-size: 80%;
   color:#888;
 }

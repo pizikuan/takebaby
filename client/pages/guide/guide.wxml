@@ -1,5 +1,2 @@
 <!--pages/guide.wxml-->
-<text>pages/guide.wxml</text>
-<rich-text>
-
-</rich-text>
+<web-view src="https://shimo.im/docs/S2c5Okq6mLsL7vx4"></web-view>
