@@ -1,4 +1,17 @@
 <!--index.wxml-->
+
+<view class="match-flex">
+  
+  <view class="match-left-image">李先生</view>
+  <view class="match-middle-block">
+    <view class="match-middle-item">姓名：李先生</view>
+    <view class="match-middle-item">微信：rickyy</view>
+    <view class="match-middle-item">小区：首城国际中心B区</view>
+    <view class="match-middle-item">学校：三帆小学</view>
+  </view>
+  <view class="match-right-block">3.0km </view>
+</view>
+
 <form bindsubmit="formSubmit">
   <view class="container">
     <view class="userinfo">
@@ -40,13 +53,7 @@
     <navigator class="guide-info" url="../guide/guide">流程指引</navigator>
 
     <view class="sug_info">
-      <text>{{motto}} </text>
+      <text>本市已有{{motto}}个家庭匹配成功</text>
     </view>
-
-    <view class="sug_info">
-    
-    </view>
-  
-
   </view>
 </form>

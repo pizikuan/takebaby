@@ -5,6 +5,7 @@ page {
   background: #eee;
 }
 
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -208,4 +209,45 @@ page {
   margin-top: 20rpx;
   font-size: 80%;
   color:#888;
+}
+
+.match-flex {
+  display: -webkit-flex;
+  /*border: 1rpx solid black;*/
+}
+
+.match-left-image {
+  border: 1rpx solid black;
+  border-radius: 10rpx;
+  width: 140rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  margin: auto;
+  padding-left: 20rpx;
+  color:black;
+
+}
+
+.match-middle-block {
+  width: 70%;
+  font-size: 85%;
+  margin: auto;
+}
+
+.match-middle-item {
+  position: relative;
+  /*border: 1rpx solid black;*/
+  padding: 8rpx 0rpx;
+}
+
+
+.match-right-block {
+  position: relative;
+  /*border: 1rpx solid black;*/
+  width: 100rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  font-size: 75%;
+  margin: auto;
+  color:#777;
 }

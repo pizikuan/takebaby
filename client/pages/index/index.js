@@ -11,7 +11,7 @@ Page({
     parentName: '', 
     wechat: '',
     mobile: '',
-    motto: '本市已经有2943个家庭匹配成功',
+    motto: '2876',
   },
 
   //事件处理函数
@@ -123,5 +123,4 @@ Page({
     //this.setData({parentName : app.globalData})
     //this.setData({mobile : app.globalData.school.name})
   }
-
 })
