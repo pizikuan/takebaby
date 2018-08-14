@@ -13,7 +13,6 @@
   <view class="flex-wrp">
     <text class="input_title">孩子学校</text>
     <input class="input_item" id="school" bindtap="bindInputFocus" value="{{school}}" placeholder="城市+学校名称" disabled="disabled" />
-    <!-- <input disabled="disabled" name="area" placeholder="小区/写字楼/学校等" bindtap="bindInputFocus" value="{{address}}" /> -->
   </view>
   <view class="flex-wrp">
     <text class="input_title">居住小区</text>
@@ -21,16 +20,16 @@
   </view>
   <view class="flex-wrp">
     <text class="input_title">家长姓名</text>
-    <input class="input_item" bindinput="bindReplaceInput" placeholder="姓名" />
+    <input class="input_item" bindinput="bindReplaceInput" value="{{parentName}}" placeholder="姓名" />
   </view>
 
   <view class="flex-wrp">
     <text class="input_title">微信号码</text>
-    <input class="input_item" placeholder="匹配成功后联系" />
+    <input class="input_item" value="{{wechat}}" placeholder="匹配成功后联系" />
   </view>
 
   <view>
-    <button type="primary" class="match-button">开始匹配</button>
+    <button type="primary" class="match-button" bindtap="bindMatch">开始匹配</button>
   </view>
   
   

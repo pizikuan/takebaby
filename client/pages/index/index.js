@@ -12,6 +12,7 @@ Page({
     school:       '',
     home:         '',
     parentName:   '',
+    wechat:       '',
     mobile:       '',
   },
   
@@ -75,6 +76,12 @@ Page({
     return url
   },
 
+  // 匹配按钮点击函数
+  bindMatch : function () {
+    // post数据给服务器获取匹配结果
+  },
+
+  
   // 生命周期函数--监听页面显示
   onShow: function () {
     // 显示app.globalData
