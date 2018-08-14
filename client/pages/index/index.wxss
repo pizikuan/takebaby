@@ -1,27 +1,38 @@
 /**index.wxss**/
 @import "../../libs/weui.wxss";
 
+page {
+    background: #eee;
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 20rpx 0rpx 0rpx 0rpx;
 }
 
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
+  width: 80rpx;
+  height: 80rpx;
   border-radius: 50%;
 }
 
 .userinfo-nickname {
   color: #aaa;
+  font-size: 80%;
 }
 
 .usermotto {
   margin-top: 150rpx;
   color:#888888;
   font-size: 85%;
+}
+
+.intro {
+  margin: 40rpx 50rpx 40rpx 50rpx;
+  font-size: 85%;
+  color:#888888;
 }
 
 .flex-wrp {
@@ -33,24 +44,31 @@
 
 .input_item {
   border:  1px solid green;
-  padding-left: 30rpx;
+  padding-left: 10rpx;
   height: 60rpx;
   border-radius:10rpx;
   position: relative;
   float: left;
-  left: 10%;
+  left: 5%;
+  width: 60%;
   color: #000;
+}
+
+.input_placeholder {
+  font-size: 80%;
+  width: 10000rpx;
+  display: block;
+
 }
 
 .input_title {
   vertical-align: middle;
   height: 100%;
   width: 25%;
-  font-size: 40rpx;
+  font-size: 100%;
   position: relative;
   float: left;
-  left: 10%;
-
+  left: 8%;
 }
 
 .match-button {
@@ -58,19 +76,6 @@
   top: 30rpx;
 }
 
-.intro {
-  margin: 50rpx;
-  font-size: 85%;
-  color:#888888;
-}
-
-
-
-/*地址添加*/
-page {
-    background: #eee;
-}
- 
 .confirm {
     background: #4cd964;
     color: white;

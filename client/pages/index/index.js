@@ -78,7 +78,10 @@ Page({
 
   //表单提交方法
   formSubmit: function (e) {
-
+  },
+  // 匹配按钮点击函数
+  bindMatch: function (e) {
+    // post数据给服务器获取匹配结果
     wx.login({
       success: function (res) {
         var code = res.code;
@@ -92,7 +95,7 @@ Page({
     console.log(adds);
     wx.request({
       url: 'http://127.0.0.1:8888/api/json/match',
-      data: { "userinfo": JSON.stringify(adds), "code": app.globalData.code},
+      data: { "userinfo": JSON.stringify(adds), "code": app.globalData.code },
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       header: {// 设置请求的 header
         'content-type': 'application/x-www-form-urlencoded'
@@ -104,19 +107,21 @@ Page({
         console.log('cuowu' + ':' + res)
       }
     })
-  },
-  // 匹配按钮点击函数
-  bindMatch : function () {
-    // post数据给服务器获取匹配结果
+
   },
 
   
   // 生命周期函数--监听页面显示
   onShow: function () {
-    // 显示app.globalData
-    this.setData({school : app.globalData.school.name})
-    this.setData({home : app.globalData.home.name})
+    this.syncGlobalData()
+  },
+
+  // 读取并显示app.globalData
+  syncGlobalData : function () {
+    this.setData({ school: app.globalData.school.name })
+    this.setData({ home: app.globalData.home.name })
     //this.setData({parentName : app.globalData})
     //this.setData({mobile : app.globalData.school.name})
-  },
+  }
+
 })

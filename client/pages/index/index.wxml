@@ -1,6 +1,5 @@
 <!--index.wxml-->
 <form bindsubmit="formSubmit">
-  <view class="container">
     <!-- <view class="userinfo">
       <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
       <block wx:else>
@@ -8,24 +7,38 @@
         <text class="userinfo-nickname">{{userInfo.nickName}}</text>
       </block>
     </view> -->
+
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 微信登录 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <!--text class="userinfo-nickname">{{userInfo.nickName}}</text-->
+    </block>
+  </view>
   <view class="intro">2个家庭合作接送孩子上下学，节省一半工作量。匹配在同一学校上学且家庭住址距离小于3km的2个家庭，每家负责接送孩子一周
   </view>
   <view class="flex-wrp">
     <text class="input_title">孩子学校</text>
-    <input class="input_item" id="school" bindtap="bindInputFocus" value="{{school}}" placeholder="城市+学校名称" disabled="disabled" />
+    <input class="input_item" id="school" bindtap="bindInputFocus" value="{{school}}" placeholder="城市+学校名称" placeholder-class="input_placeholder" disabled="disabled" />
   </view>
   <view class="flex-wrp">
     <text class="input_title">居住小区</text>
-    <input class="input_item"  id="home" bindtap="bindInputFocus" value="{{home}}" placeholder="城市+小区名称" disabled="disabled" />
+    <input class="input_item"  id="home" bindtap="bindInputFocus" value="{{home}}" placeholder="城市+小区名称" placeholder-class="input_placeholder" disabled="disabled" />
   </view>
   <view class="flex-wrp">
     <text class="input_title">家长姓名</text>
-    <input class="input_item" bindinput="bindReplaceInput" value="{{parentName}}" placeholder="姓名" />
+    <input class="input_item" bindinput="bindReplaceInput" value="{{parentName}}" placeholder="姓名" placeholder-class="input_placeholder" />
   </view>
 
   <view class="flex-wrp">
     <text class="input_title">微信号码</text>
-    <input class="input_item" value="{{wechat}}" placeholder="匹配成功后联系" />
+    <input class="input_item" value="{{wechat}}" placeholder-class="input_placeholder" placeholder="匹配成功后联系" />
+  </view>
+
+  <view class="flex-wrp">
+    <text class="input_title">手机号码</text>
+    <input class="input_item" value="{{wechat}}" placeholder-class="input_placeholder" placeholder="不公开，仅用于系统通知和验证" />
   </view>
 
   <view>
