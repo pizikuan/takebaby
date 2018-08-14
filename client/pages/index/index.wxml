@@ -38,8 +38,9 @@
     </view>
 
     <view class="sug_info">
-      <text>{{motto}}</text>
+      <text>{{motto}} </text>
     </view>
-    
+
+    <navigator url="https://shimo.im/docs/S2c5Okq6mLsL7vx4">接娃指引</navigator>
   </view>
 </form>
