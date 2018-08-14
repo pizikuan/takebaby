@@ -5,8 +5,12 @@ App({
     userInfo:         null,
     school:           {name: "", longitude: 0.0, latitude: 0.0},
     home:             {name: "", longitude: 0.0, latitude: 0.0},
+    parentName:       "",
+    wechat:           "",
+    mobile:           "",
     searchResult:     Array[10],
-    inputStatus:      ""
+    inputStatus:      "",
+    code:             ""
   },
 
   onLaunch: function () {

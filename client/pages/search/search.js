@@ -65,7 +65,6 @@ Page({
       app.globalData.searchResult = data.result.concat();
 
       //console.log(app.globalData.searchResult)
-
       that.setData({ searchResult: sr });
     };
 
@@ -84,7 +83,9 @@ Page({
 
     var index = event.currentTarget.id
     var i = parseInt(index.substr(2))
-    console.log(app.globalData.searchResult)
+    console.log(event)
+
+    // 设置学校和家庭住址经纬度
     if (app.globalData.inputStatus == "school") {
       app.globalData.school.name = app.globalData.searchResult[i].name
       app.globalData.school.longitude = app.globalData.searchResult[i].location.lng
@@ -111,6 +112,7 @@ Page({
       }
     })
   },
+
 
   // 生命周期函数--监听页面加载
   onLoad: function (options) {

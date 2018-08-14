@@ -74,9 +74,37 @@ Page({
     return url
   },
 
+  //表单提交方法
+  formSubmit: function (e) {
+  },
   // 匹配按钮点击函数
-  bindMatch: function () {
+  bindMatch: function (e) {
     // post数据给服务器获取匹配结果
+    wx.login({
+      success: function (res) {
+        var code = res.code;
+        // console.log(code);
+        app.globalData.code = code;
+      }
+    });
+
+    var adds = e.detail.value;
+
+    console.log(adds);
+    wx.request({
+      url: 'http://127.0.0.1:8888/api/json/match',
+      data: { "userinfo": JSON.stringify(adds), "code": app.globalData.code },
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {// 设置请求的 header
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: function (res) {
+        console.log(JSON.stringify(res.data))
+      },
+      fail: function (res) {
+        console.log('cuowu' + ':' + res)
+      }
+    })
 
   },
 

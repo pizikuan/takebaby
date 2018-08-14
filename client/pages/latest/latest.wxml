@@ -1,4 +1,6 @@
 <!--latest.wxml-->
+
+
 <view class="container">
   <view class="topic-main">
     <block wx:for="{{latest}}">

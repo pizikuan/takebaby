@@ -50,11 +50,14 @@ page {
   position: relative;
   float: left;
   left: 5%;
+  width: 55%;
   color: #000;
 }
 
 .input_placeholder {
   font-size: 80%;
+  width: 10000rpx;
+  display: block;
 }
 
 .input_title {
