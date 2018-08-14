@@ -1,17 +1,3 @@
-<!--index.wxml-->
-
-<view class="match-flex">
-  
-  <!--view class="match-left-image">李先生</view-->
-  <view class="match-middle-block">
-    <view class="match-middle-upper">李先生</view>
-    <view class="match-middle-item">微信：rickyy</view>
-    <view class="match-middle-item">小区：首城国际中心B区</view>
-    <view class="match-middle-item">学校：三帆小学</view>
-  </view>
-  <view class="match-right-block">3.0km </view>
-</view>
-<view class="footer_line"></view>
 
 <form bindsubmit="formSubmit">
   <view class="container">

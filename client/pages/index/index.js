@@ -79,7 +79,8 @@ Page({
   },
   // 匹配按钮点击函数
   bindMatch: function (e) {
-    // post数据给服务器获取匹配结果
+
+
     wx.login({
       success: function (res) {
         var code = res.code;
@@ -88,9 +89,10 @@ Page({
       }
     });
 
+    // post数据给服务器获取匹配结果
     var adds = e.detail.value;
-
     console.log(adds);
+    
     wx.request({
       url: 'http://192.168.51.10:8888/api/json/match',
       data: { "userinfo": JSON.stringify(adds), "code": app.globalData.code },
@@ -105,6 +107,11 @@ Page({
         console.log('error: ' + res)
       }
     })
+
+    wx.navigateTo({
+      url: '../match/match',
+    })
+
   },
 
   // 生命周期函数--监听页面显示
