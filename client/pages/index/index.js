@@ -79,15 +79,21 @@ Page({
   // 匹配按钮点击函数
   bindMatch : function () {
     // post数据给服务器获取匹配结果
+
   },
 
   
   // 生命周期函数--监听页面显示
   onShow: function () {
-    // 显示app.globalData
-    this.setData({school : app.globalData.school.name})
-    this.setData({home : app.globalData.home.name})
+    this.syncGlobalData()
+  },
+
+  // 读取并显示app.globalData
+  syncGlobalData : function () {
+    this.setData({ school: app.globalData.school.name })
+    this.setData({ home: app.globalData.home.name })
     //this.setData({parentName : app.globalData})
     //this.setData({mobile : app.globalData.school.name})
-  },
+  }
+
 })
