@@ -24,9 +24,8 @@
         <text class="input_title">家长姓名</text>
         <input name='username' class="input_item" bindinput="bindReplaceInput" placeholder="姓名" />
       </view>
-
       <view class="flex-wrp">
-        <text class="input_title">手机号码</text>
+        <text class="input_title">微信号码</text>
         <input name='wxNum' class="input_item" placeholder="匹配成功后联系" />
       </view>
 

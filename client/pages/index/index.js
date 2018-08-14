@@ -78,11 +78,21 @@ Page({
 
   //表单提交方法
   formSubmit: function (e) {
+
+    wx.login({
+      success: function (res) {
+        var code = res.code;
+        // console.log(code);
+        app.globalData.code = code;
+      }
+    });
+
     var adds = e.detail.value;
+
     console.log(adds);
     wx.request({
       url: 'http://127.0.0.1:8888/api/json/match',
-      data: adds,
+      data: { "userinfo": JSON.stringify(adds), "code": app.globalData.code},
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       header: {// 设置请求的 header
         'content-type': 'application/x-www-form-urlencoded'
@@ -94,8 +104,5 @@ Page({
         console.log('cuowu' + ':' + res)
       }
     })
-
   },
-
-
 })
