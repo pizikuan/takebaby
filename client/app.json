@@ -3,14 +3,16 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/search/search",
-    "pages/latest/latest"
+    "pages/match/match"
   ],
+
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F8F8F8",
     "navigationBarTitleText": "接娃宝",
     "navigationBarTextStyle": "black"
   },
+  
   "tabBar": {
     "color": "#000",
     "selectedColor": "#56abe4",
@@ -25,7 +27,7 @@
         
       },
       {
-        "pagePath": "pages/latest/latest",
+        "pagePath": "pages/match/match",
         "text": "匹配",
         "iconPath": "images/latest.png",
         "selectedIconPath": "images/lastest_on.png"
