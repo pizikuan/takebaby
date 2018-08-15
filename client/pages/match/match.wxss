@@ -65,7 +65,7 @@
 }
 
 .suggestion {
-  color: #444;
+  color: #10f;
   padding: 10%;
 }
 
