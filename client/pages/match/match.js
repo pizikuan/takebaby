@@ -148,7 +148,6 @@ Page({
         console.log('error: ' + res)
       }
     })
-<<<<<<< HEAD
   },
 
   onLoad: function () {
@@ -157,8 +156,5 @@ Page({
     wx.showShareMenu({
       withShareTicket: false
     })
-=======
->>>>>>> 4130edad77ae827ab54f660975f4e8ad68247228
   }
-
 })

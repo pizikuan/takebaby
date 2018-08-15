@@ -85,7 +85,6 @@ Page({
 
   },
 
-
   getCurrentPageUrl: function () {
     var pages = getCurrentPages()             //获取加载的页面
     var currentPage = pages[pages.length - 1] //获取当前页面的对象
@@ -94,8 +93,6 @@ Page({
   },
   //匹配按钮点击触发方法
   bindMatch: function (e) {
-<<<<<<< HEAD
-
 
     wx.login({
       success: function (res) {
@@ -124,8 +121,6 @@ Page({
       }
     })
 
-=======
->>>>>>> 4130edad77ae827ab54f660975f4e8ad68247228
     wx.navigateTo({
       url: '../match/match',
     })
