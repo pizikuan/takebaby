@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<form bindsubmit="formSubmit">
+<form bindsubmit="bindMatch">
   <view class="container">
     <view class="userinfo">
       <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 微信登录 </button>
@@ -20,21 +20,21 @@
     </view>
     <view class="flex-wrp">
       <text class="input_title">家长姓名</text>
-      <input class="input_item" bindinput="bindReplaceInput" value="{{parentName}}" placeholder="姓名" placeholder-class="input_placeholder" />
+      <input name='userName' class="input_item" bindinput="bindReplaceInput" value="{{parentName}}" placeholder="姓名" placeholder-class="input_placeholder" />
     </view>
 
     <view class="flex-wrp">
       <text class="input_title">微信号码</text>
-      <input class="input_item" value="{{wechat}}" placeholder-class="input_placeholder" placeholder="匹配成功后联系" />
+      <input name='wxNum' class="input_item" value="{{wechat}}" placeholder-class="input_placeholder" placeholder="匹配成功后联系" />
     </view>
 
     <view class="flex-wrp">
       <text class="input_title">手机号码</text>
-      <input class="input_item" value="{{wechat}}" placeholder-class="input_placeholder" placeholder="不公开，仅用于系统通知和验证" />
+      <input name='phoneNum' class="input_item" value="{{wechat}}" placeholder-class="input_placeholder" placeholder="不公开，仅用于系统通知和验证" />
     </view>
 
     <view>
-      <button type="primary" class="match-button" bindtap="bindMatch">开始匹配</button>
+      <button type="primary" class="match-button" form-type='submit'>开始匹配</button>
     </view>
 
     <navigator class="guide-info" url="../guide/guide">流程指引</navigator>
