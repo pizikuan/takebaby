@@ -40,8 +40,7 @@
     <navigator class="guide-info" url="../guide/guide">流程指引</navigator>
 
     <view class="sug_info">
-      <text>{{motto}} </text>
+      <text>本市已有{{motto}}个家庭匹配成功</text>
     </view>
-
   </view>
 </form>
