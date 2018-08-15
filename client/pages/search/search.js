@@ -9,33 +9,31 @@ Page({
     inputVal: "",
   },
 
-  showInput: function () {
-    this.setData({
-      inputShowed: true
-    });
+  showInput: function() {
+    this.setData({inputShowed: true});
   },
 
-  hideInput: function () {
+  hideInput: function() {
     this.setData({
       inputVal: "",
       inputShowed: false
     });
   },
 
-  clearInput: function () {
+  clearInput: function() {
     this.setData({
       inputVal: ""
     });
   },
 
-  inputTyping: function (e) {
+  inputTyping: function(e) {
     this.setData({
       inputVal: e.detail.value
     });
   },
 
   // 从百度地图SDK得到建议热词语
-  bindLocationInput: function (e) {
+  bindLocationInput: function(e) {
 
     this.setData({
       inputVal: e.detail.value
@@ -48,11 +46,11 @@ Page({
       ak: '8omElRZxaosX2PoNpGiOEwsx7wbBlTZG'
     });
 
-    var fail = function (data) {
+    var fail = function(data) {
       console.log(data)
     };
 
-    var success = function (data) {
+    var success = function(data) {
 
       var sr = ['', '', '', '', '', '', '', '', '', ''];
       var maxLength = data.result.length < 10 ? data.result.length : 10;
@@ -65,7 +63,7 @@ Page({
       app.globalData.searchResult = data.result.concat();
 
       //console.log(app.globalData.searchResult)
-      that.setData({ searchResult: sr });
+      that.setData( {searchResult: sr} );
     };
 
     // 发起suggestion检索请求 
@@ -79,7 +77,7 @@ Page({
   },
 
   // 百度地图热词搜索结果被点击后的回调函数
-  searchResultTap: function (event) {
+  searchResultTap: function(event) {
 
     var index = event.currentTarget.id
     var i = parseInt(index.substr(2))
@@ -90,67 +88,65 @@ Page({
       app.globalData.school.name = app.globalData.searchResult[i].name
       app.globalData.school.longitude = app.globalData.searchResult[i].location.lng
       app.globalData.school.latitude = app.globalData.searchResult[i].location.lat
-    }
-    else if (app.globalData.inputStatus == "home") {
+    } else if (app.globalData.inputStatus == "home") {
       app.globalData.home.name = app.globalData.searchResult[i].name
       app.globalData.home.longitude = app.globalData.searchResult[i].location.lng
       app.globalData.home.latitude = app.globalData.searchResult[i].location.lat
-    }
-    else {
+    } else {
       console.log("input status error!")
     }
   },
 
-  navigator2url: function () {
+  navigator2url: function() {
     wx.switchTab({
       url: "../index/index",
-      success: function () {
-        console.log('跳转到index页面成功')// success              
+      success: function() {
+        console.log('跳转到index页面成功') // success              
       },
-      fail: function () {
-        console.log('跳转到index页面失败')//fail
+      fail: function() {
+        console.log('跳转到index页面失败') //fail
       }
     })
   },
 
 
   // 生命周期函数--监听页面加载
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
 
   // 生命周期函数--监听页面初次渲染完成
-  onReady: function () {
+  onReady: function() {
 
   },
 
   // 生命周期函数--监听页面显示
-  onShow: function () {
+  onShow: function() {
 
   },
 
   // 生命周期函数--监听页面隐藏
-  onHide: function () {
+  onHide: function() {
 
   },
 
   // 生命周期函数--监听页面卸载
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   // 页面相关事件处理函数--监听用户下拉动作
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   // 页面上拉触底事件的处理函数
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   // 用户点击右上角分享
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

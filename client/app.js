@@ -10,7 +10,8 @@ App({
     mobile:           "",
     searchResult:     Array[10],
     inputStatus:      "",
-    code:             ""
+    code:             "",
+    hidden:           true,
   },
 
   onLaunch: function () {

@@ -11,7 +11,7 @@ Page({
     parentName: '', 
     wechat: '',
     mobile: '',
-    motto: '本市已经有2943个家庭匹配成功',
+    motto: '2876',
   },
 
   //事件处理函数
@@ -83,8 +83,11 @@ Page({
     console.log(app.globalData.home);
     console.log(app.globalData.school);
 
+
+    // post数据给服务器获取匹配结果
     var adds = e.detail.value;
     console.log(adds);
+    
     wx.request({
       url: 'http://192.168.51.10:8888/api/json/match',
       data: { 
@@ -101,9 +104,14 @@ Page({
         console.log(JSON.stringify(res.data))
       },
       fail: function (res) {
-        console.log('cuowu' + ':' + res)
+        console.log('error: ' + res)
       }
     })
+
+    wx.navigateTo({
+      url: '../match/match',
+    })
+
   },
 
   // 生命周期函数--监听页面显示
@@ -122,5 +130,4 @@ Page({
     //this.setData({parentName : app.globalData})
     //this.setData({mobile : app.globalData.school.name})
   }
-
 })

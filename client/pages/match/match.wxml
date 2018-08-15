@@ -1,31 +1,27 @@
-<view class="container">
-  <view class="topic-main">
-    <block wx:for="{{latest}}">
-      <view class="topic-item" index="{{index}}" id="{{item.id}}" catchtap="redictDetail">
-        <!-- <image class="member-avatar" src="{{item.member.avatar_normal}}" background-size="cover"></image> -->
-        <view class="topic-info">
-          <view class="topic-inner">
-            <view class="topic-left">
-              <view class="topic-title" id=''>
-                <text style='font-size:16px'>{{item.title}}</text>
-                <text>·{{item.author}}</text>
-              </view>
-              <view>
-                <block wx:for="{{item.paragraphs}}">
-                  <text class="member-nickname">{{item}}</text>
-                </block>
-              </view>
-            </view>
-            <!-- <view id='{{item.replies}}' class="reply-num">10</view> -->
-          </view>
-        </view>
-      </view>
-    </block>
+<block wx:for="{{data}}">
+  <view class="match-flex">
+    <!--view class="match-left-image">李先生</view-->
+    <view class="match-middle-block">
+      <view class="match-middle-upper">李先生</view>
+      <view class="match-middle-item">微信：13xxxxxxxx</view>
+      <view class="match-middle-item">小区：首城国际中心B区</view>
+      <view class="match-middle-item">学校：实验二小广外分校</view>
+    </view>
+    <view class="match-right-block">3.0km </view>
   </view>
+</block>
 
+<view class="footer_line"> </view>
 
-
-  <!--loading hidden="{{hidden}}">
-    加载中...
-  </loading-->
+<view>
+  <block wx:for="{{matehRes.length > 0}}">
+  </block>
 </view>
+
+<view class="suggestion">未发现合适的家庭，
+请点击右上角，将小程序分享到学校群、班级群、朋友圈，可极大地提升匹配概率，
+匹配成功后会通过微信消息提醒您</view>
+
+<navigator class="guide-info" url="../guide/guide">流程指引</navigator>
+
+<loading hidden="true">匹配中...</loading>
