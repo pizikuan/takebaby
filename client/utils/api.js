@@ -1,6 +1,6 @@
 'use strict';
 //var HOST_URI = 'https://www.v2ex.com/api/';
-var HOST_URI = 'http://192.168.51.10:8080/api/';
+var HOST_URI = 'http://192.168.51.10:8888/api/';
 
 //获取首页信息
 var GET_METCH = 'index.json';
@@ -21,6 +21,5 @@ function _getINDEX() {
 
 //加载所有方法
 module.exports = {
-
   GET_INDEX: _getINDEX
 };
