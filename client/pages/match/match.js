@@ -47,7 +47,7 @@
 //   }
 // })
 
-// var Api = require('../../utils/api.js');
+var Api = require('../../utils/api.js');
 
 var app=getApp()
 
