@@ -72,18 +72,19 @@ Page({
   },
 
   fetchData: function () {
-    var that = this;
-    that.setData({hidden: false})
-    wx.request({
-      url: Api.GET_INDEX({p: 1}),
-      success: function (res) {
-        console.log(res);
-        that.setData({matchRes: res.data})
-        setTimeout(function () {
-          that.setData({hidden: true})
-        }, 300)
-      }
-    })
+    console.log("ok");
+    // var that = this;
+    // that.setData({hidden: false})
+    // wx.request({
+    //   url: Api.GET_INDEX({p: 1}),
+    //   success: function (res) {
+    //     console.log(res);
+    //     that.setData({matchRes: res.data})
+    //     setTimeout(function () {
+    //       that.setData({hidden: true})
+    //     }, 300)
+    //   }
+    // })
   },
 
   onLoad: function () {
