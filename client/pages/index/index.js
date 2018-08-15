@@ -92,41 +92,8 @@ Page({
     var url = currentPage.route               //当前页面url
     return url
   },
-  //表单提交方法
-  /***
-   * 通过表单触发进行调用提交，而不通过bindtap进行触发。
-   * 
-   */
+  //匹配按钮点击触发方法
   bindMatch: function (e) {
-    // post数据给服务器获取匹配结果
-    console.log(app.globalData.home);
-    console.log(app.globalData.school);
-
-
-    // post数据给服务器获取匹配结果
-    var adds = e.detail.value;
-    console.log(adds);
-    
-    wx.request({
-      url: 'http://192.168.51.10:8888/api/json/match',
-      data: { 
-        "userinfo": JSON.stringify(adds), 
-        "code": app.globalData.code, 
-        "home": JSON.stringify(app.globalData.home), 
-        "school": JSON.stringify(app.globalData.school)
-      },
-      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      header: {// 设置请求的 header
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-        console.log(JSON.stringify(res.data))
-      },
-      fail: function (res) {
-        console.log('error: ' + res)
-      }
-    })
-
     wx.navigateTo({
       url: '../match/match',
     })

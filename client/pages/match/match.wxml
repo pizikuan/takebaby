@@ -1,17 +1,16 @@
-<block wx:for="{{data}}">
+<block wx:for="{{matchRes}}">
   <view class="match-flex">
     <!--view class="match-left-image">李先生</view-->
     <view class="match-middle-block">
-      <view class="match-middle-upper">李先生</view>
-      <view class="match-middle-item">微信：13xxxxxxxx</view>
-      <view class="match-middle-item">小区：首城国际中心B区</view>
-      <view class="match-middle-item">学校：实验二小广外分校</view>
+      <view class="match-middle-upper">{{item.username}}</view>
+      <view class="match-middle-item">微信：{{item.wxNum}}</view>
+      <view class="match-middle-item">小区：{{item.homeAddr}}</view>
+      <view class="match-middle-item">学校：{{item.schoolAddr}}</view>
     </view>
-    <view class="match-right-block">3.0km </view>
+    <view class="match-right-block">{{item.distanceHome}} </view>
   </view>
-</block>
-
 <view class="footer_line"> </view>
+</block>
 
 <view>
   <block wx:for="{{matehRes.length > 0}}">
