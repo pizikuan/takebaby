@@ -16,15 +16,11 @@
   <block wx:for="{{matehRes.length == 0}}">
   </block>
 </view>
-  
+
 <view class="suggestion">请点击右上角...按钮，将本小程序分享到孩子所在学校群、班级群、朋友圈，可极大地提升匹配概率，匹配成功后会通过短信或微信通知您</view>
 
 <navigator class="guide-info" url="../guide/guide">流程指引</navigator>
 
 <view class="empty"></view>
-
-
-
-
 
 <loading hidden="true">匹配中...</loading>

@@ -148,6 +148,13 @@ Page({
         console.log('error: ' + res)
       }
     })
-  }
+  },
 
+  onLoad: function () {
+    this.fetchData();
+    console.log(app.globalData.hidden)
+    wx.showShareMenu({
+      withShareTicket: false
+    })
+  }
 })
