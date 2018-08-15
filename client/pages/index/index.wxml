@@ -30,7 +30,7 @@
 
     <view class="flex-wrp">
       <text class="input_title">手机号码</text>
-      <input name='phoneNum'  id="mobileNum" class="input_item" bindinput="bindReplaceInput" value="{{wechat}}" placeholder-class="input_placeholder" placeholder="不公开，仅用于系统通知和验证" />
+      <input name='phoneNum'  id="mobileNum" class="input_item" bindinput="bindReplaceInput" value="{{mobile}}" placeholder-class="input_placeholder" placeholder="不公开，仅用于系统通知和验证" />
     </view>
 
     <view>

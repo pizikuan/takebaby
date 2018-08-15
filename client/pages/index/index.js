@@ -6,12 +6,12 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    motto: '2876',
     school: '',
     home: '',
-    parentName: '', 
+    parentName: '',
     wechat: '',
-    mobile: '',
-    motto: '2876',
+    mobile: ''
   },
 
   //事件处理函数
@@ -67,8 +67,22 @@ Page({
     })
   },
 
-  bindReplaceInput: function (event) {
-    
+  bindReplaceInput: function (e) {
+    if (e.currentTarget.id == "parentName") {
+      app.globalData.parentName = e.detail.value
+    }
+    else if (e.currentTarget.id == "wechatNum") {
+      app.globalData.wechat = e.detail.value
+    }
+    else if (e.currentTarget.id == "mobileNum") {
+      app.globalData.mobile = e.detail.value
+    }
+    else {
+      console.log("bindReplaceInput() parameter error")
+    }
+
+    console.log(e)
+
   },
 
 
@@ -126,13 +140,10 @@ Page({
 
   // 读取并显示app.globalData
   syncGlobalData: function () {
-    this.setData({
-      school: app.globalData.school.name
-    })
-    this.setData({
-      home: app.globalData.home.name
-    })
-    //this.setData({parentName : app.globalData})
-    //this.setData({mobile : app.globalData.school.name})
+    this.setData({ school:      app.globalData.school.name})
+    this.setData({ home:        app.globalData.home.name})
+    this.setData({ parentName : app.globalData.parentName})
+    this.setData({ wechat:      app.globalData.wechat })
+    this.setData({ mobile:      app.globalData.mobile })
   }
 })
