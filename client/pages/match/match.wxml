@@ -1,4 +1,4 @@
-<block wx:for="{{data}}">
+<block wx:for="{{matchRes}}">
   <view class="match-flex">
     <!--view class="match-left-image">李先生</view-->
     <view class="match-middle-block">
