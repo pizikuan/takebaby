@@ -121,9 +121,9 @@ Page({
     wx.request({
       url: 'http://192.168.51.10:8888/api/json/match',
       data: {
-        "userName": JSON.stringify(app.globalData.parentName),
-        "wxNum": JSON.stringify(app.globalData.wechat),
-        "phoneNum": JSON.stringify(app.globalData.mobile),
+        "userName": app.globalData.parentName,
+        "wxNum": app.globalData.wechat,
+        "phoneNum": app.globalData.mobile,
         "code": app.globalData.code,
         "home": JSON.stringify(app.globalData.home),
         "school": JSON.stringify(app.globalData.school)
@@ -137,10 +137,13 @@ Page({
         // this.data.matchRes = []
         // this.data.isShow = true;
 
-        that.setData({
-          'matchRes': JSON.parse(res.data.data)
-        });
-        
+        if (res.data.errno == 1) {
+          console.log("请求失败");
+        }else{
+          that.setData({
+            'matchRes': JSON.parse(res.data.data)
+          });
+        }
       },
       fail: function (res) {
         console.log('error: ' + res)
