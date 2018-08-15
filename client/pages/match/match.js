@@ -115,8 +115,6 @@ Page({
     // console.log(app.globalData.wechat);
     // console.log(app.globalData.mobile);
   
-    
-
     //后台请求
     wx.request({
       url: 'http://192.168.51.10:8888/api/json/match',
@@ -136,6 +134,7 @@ Page({
         // console.log(JSON.stringify(res.data)
         // this.data.matchRes = []
         // this.data.isShow = true;
+        // console.log(res)
 
         if (res.data.errno == 1) {
           console.log("请求失败");

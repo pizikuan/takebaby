@@ -81,7 +81,7 @@ Page({
       console.log("bindReplaceInput() parameter error")
     }
 
-    console.log(e)
+    // console.log(e)
 
   },
 
@@ -112,5 +112,12 @@ Page({
     this.setData({ parentName : app.globalData.parentName})
     this.setData({ wechat:      app.globalData.wechat })
     this.setData({ mobile:      app.globalData.mobile })
+  },
+
+  // 检查input是否合法
+  checkInput: function() {
+
   }
+
+  
 })
