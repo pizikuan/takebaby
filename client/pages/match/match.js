@@ -50,6 +50,7 @@
 var Api = require('../../utils/api.js');
 
 var app=getApp()
+var that;
 
 Page({
   data: {
@@ -88,7 +89,8 @@ Page({
     // })
   },
 
-  onLoad: function () {
+  onLoad: function (){ 
+    that = this
     console.log("onLoad")
     this.fetchData()
     console.log(app.globalData.hidden)
@@ -113,7 +115,8 @@ Page({
     // console.log(app.globalData.wechat);
     // console.log(app.globalData.mobile);
   
-    this.data.isShow = true;
+    
+
     //后台请求
     wx.request({
       url: 'http://192.168.51.10:8888/api/json/match',
@@ -135,8 +138,9 @@ Page({
         // this.data.isShow = true;
 
         that.setData({
-          'loginErrorCount': 0
+          'matchRes': JSON.parse(res.data.data)
         });
+        
       },
       fail: function (res) {
         console.log('error: ' + res)
