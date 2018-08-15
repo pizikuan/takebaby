@@ -1,27 +1,37 @@
-
-<view class="match-flex">
-  
-  <!--view class="match-left-image">李先生</view-->
-  <view class="match-middle-block">
-    <view class="match-middle-upper">李先生</view>
-    <view class="match-middle-item">微信：13xxxxxxxx</view>
-    <view class="match-middle-item">小区：首城国际中心B区</view>
-    <view class="match-middle-item">学校：实验二小广外分校</view>
+<block wx:for="{{matchRes}}">
+  <view class="match-flex">
+    <!--view class="match-left-image">李先生</view-->
+    <view class="match-middle-block">
+      <view class="match-middle-upper">{{item.username}}</view>
+      <view class="match-middle-item">微信：{{item.wxNum}}</view>
+      <view class="match-middle-item">小区：{{item.homeAddr}}</view>
+      <view class="match-middle-item">学校：{{item.schoolAddr}}</view>
+    </view>
+    <view class="match-right-block">{{item.distanceHome}} </view>
   </view>
-  <view class="match-right-block">3.0km </view>
-</view>
-
 <view class="footer_line"> </view>
+</block>
 
 <view>
-  <block wx:for="{{matehRes.length > 0}}">
+  <block wx:for="{{matehRes.length == 0}}">
   </block>
 </view>
+<<<<<<< HEAD
 
 <view class="suggestion">未发现合适的家庭，
-请点击右上角，将小程序分享到学校群、班级群、朋友圈，可极大地提升匹配概率，
+请点击右上角左边按钮，将小程序分享到学校群、班级群、朋友圈，可极大地提升匹配概率，
 匹配成功后会通过微信消息提醒您</view>
+=======
+  
+<view class="suggestion">请点击右上角...按钮，将本小程序分享到孩子所在学校群、班级群、朋友圈，可极大地提升匹配概率，匹配成功后会通过短信或微信通知您</view>
+>>>>>>> 4130edad77ae827ab54f660975f4e8ad68247228
 
 <navigator class="guide-info" url="../guide/guide">流程指引</navigator>
+
+<view class="empty"></view>
+
+
+
+
 
 <loading hidden="true">匹配中...</loading>

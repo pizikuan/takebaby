@@ -39,7 +39,8 @@ page {
 .flex-wrp {
   display: flex;
   height: 100rpx;
-  align-content: center;
+  /*align-content: center;
+  border: 1px solid #000;*/
   width: 100%;
 }
 
@@ -49,19 +50,18 @@ page {
   height: 60rpx;
   border-radius: 10rpx;
   position: relative;
-  float: left;
-  left: 5%;
+  margin-left: 5%;
   width: 55%;
   color: #000;
 }
 
 .input_placeholder {
   font-size: 80%;
-  width: 10000rpx;
-  display: block;
+  width: 1000rpx;
 }
 
 .input_title {
+  /*border: 1px solid #000;*/
   vertical-align: middle;
   height: 100%;
   width: 25%;

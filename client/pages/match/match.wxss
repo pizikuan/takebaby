@@ -68,3 +68,8 @@
   color: #444;
   padding: 10%;
 }
+
+.empty {
+  height: 200rpx;
+  /*border: 1rpx solid black;*/
+}

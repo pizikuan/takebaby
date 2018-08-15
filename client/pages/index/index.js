@@ -6,12 +6,12 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    motto: '2876',
     school: '',
     home: '',
-    parentName: '', 
+    parentName: '',
     wechat: '',
-    mobile: '',
-    motto: '2876',
+    mobile: ''
   },
 
   //事件处理函数
@@ -67,18 +67,34 @@ Page({
     })
   },
 
+  bindReplaceInput: function (e) {
+    if (e.currentTarget.id == "parentName") {
+      app.globalData.parentName = e.detail.value
+    }
+    else if (e.currentTarget.id == "wechatNum") {
+      app.globalData.wechat = e.detail.value
+    }
+    else if (e.currentTarget.id == "mobileNum") {
+      app.globalData.mobile = e.detail.value
+    }
+    else {
+      console.log("bindReplaceInput() parameter error")
+    }
+
+    // console.log(e)
+
+  },
+
+
   getCurrentPageUrl: function () {
     var pages = getCurrentPages()             //获取加载的页面
     var currentPage = pages[pages.length - 1] //获取当前页面的对象
     var url = currentPage.route               //当前页面url
     return url
   },
-
-  //表单提交方法
-  formSubmit: function (e) {
-  },
-  // 匹配按钮点击函数
+  //匹配按钮点击触发方法
   bindMatch: function (e) {
+<<<<<<< HEAD
 
 
     wx.login({
@@ -92,7 +108,7 @@ Page({
     // post数据给服务器获取匹配结果
     var adds = e.detail.value;
     console.log(adds);
-    
+
     wx.request({
       url: 'http://192.168.51.10:8888/api/json/match',
       data: { "userinfo": JSON.stringify(adds), "code": app.globalData.code },
@@ -108,11 +124,13 @@ Page({
       }
     })
 
+=======
+>>>>>>> 4130edad77ae827ab54f660975f4e8ad68247228
     wx.navigateTo({
       url: '../match/match',
     })
-
   },
+
 
   // 生命周期函数--监听页面显示
   onShow: function () {
@@ -121,13 +139,17 @@ Page({
 
   // 读取并显示app.globalData
   syncGlobalData: function () {
-    this.setData({
-      school: app.globalData.school.name
-    })
-    this.setData({
-      home: app.globalData.home.name
-    })
-    //this.setData({parentName : app.globalData})
-    //this.setData({mobile : app.globalData.school.name})
+    this.setData({ school:      app.globalData.school.name})
+    this.setData({ home:        app.globalData.home.name})
+    this.setData({ parentName : app.globalData.parentName})
+    this.setData({ wechat:      app.globalData.wechat })
+    this.setData({ mobile:      app.globalData.mobile })
+  },
+
+  // 检查input是否合法
+  checkInput: function() {
+
   }
+
+  
 })
