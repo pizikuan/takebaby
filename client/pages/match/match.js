@@ -88,8 +88,19 @@ Page({
   },
 
   onLoad: function () {
-    this.fetchData();
+    console.log("onLoad")
+    this.fetchData()
     console.log(app.globalData.hidden)
+    this.match()
+  },
+
+
+  onShow: function () {
+    console.log("onShow")
+  },
+
+  match: function () {
+
   }
 
 })
