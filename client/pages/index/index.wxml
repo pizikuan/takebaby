@@ -20,7 +20,7 @@
     </view>
     <view class="flex-wrp">
       <text class="input_title">家长姓名</text>
-      <input name='userName' class="input_item" id="parentName" bindinput="bindReplaceInput" value="{{parentName}}" placeholder="姓名" placeholder-class="input_placeholder" />
+      <input name='userName' class="input_item" id="parentName" bindinput="bindReplaceInput" value="{{parentName}}" placeholder="姓名或昵称" placeholder-class="input_placeholder" />
     </view>
 
     <view class="flex-wrp">
