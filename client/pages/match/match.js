@@ -90,21 +90,17 @@ Page({
   },
 
   onLoad: function (){ 
-    that = this
+    
     console.log("onLoad")
     this.fetchData()
     console.log(app.globalData.hidden)
-    this.match()
   },
 
 
   onShow: function () {
-    console.log("onShow")
-  },
-  matchSet: function () {
-    this.setData({
-      matchRes: [1, 2, 3, 4]
-    })
+    that = this
+    console.log("onShow");
+    this.match();
   },
   //开启匹配后台调用
   match: function () {

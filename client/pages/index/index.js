@@ -94,33 +94,6 @@ Page({
   //匹配按钮点击触发方法
   bindMatch: function (e) {
 
-    wx.login({
-      success: function (res) {
-        var code = res.code;
-        // console.log(code);
-        app.globalData.code = code;
-      }
-    });
-
-    // post数据给服务器获取匹配结果
-    var adds = e.detail.value;
-    console.log(adds);
-
-    wx.request({
-      url: 'http://192.168.51.10:8888/api/json/match',
-      data: { "userinfo": JSON.stringify(adds), "code": app.globalData.code },
-      method: 'POST',          // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      header: {                // 设置请求的 header
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      success: function (res) {
-        console.log(JSON.stringify(res.data))
-      },
-      fail: function (res) {
-        console.log('error: ' + res)
-      }
-    })
-
     wx.navigateTo({
       url: '../match/match',
     })
