@@ -7,7 +7,7 @@
       <view class="match-middle-item">小区：{{item.homeAddr}}</view>
       <view class="match-middle-item">学校：{{item.schoolAddr}}</view>
     </view>
-    <view class="match-right-block">{{item.distanceHome}} </view>
+    <view class="match-right-block">{{item.distanceHome}}km </view>
   </view>
 <view class="footer_line"> </view>
 </block>
