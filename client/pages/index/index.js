@@ -94,9 +94,65 @@ Page({
   //匹配按钮点击触发方法
   bindMatch: function (e) {
 
-    wx.navigateTo({
-      url: '../match/match',
-    })
+    var myPhonereg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;
+    //在这里对各个数据进行检测，如果条件满足则navigateTo
+
+    console.log(JSON.stringify(app.globalData.home).length);
+
+    if (JSON.stringify(app.globalData.home).length < 1) {
+      wx.showModal({
+        title: '',
+        content: '请填写小区名称',
+        showCancel: false,
+        success: function (res) {
+
+        }
+      })
+    } else if (JSON.stringify(app.globalData.school) < 1) {
+      wx.showModal({
+        title: '',
+        content: '请填写学校名称',
+        showCancel: false,
+        success: function (res) {
+
+        }
+      })   
+    }else if (app.globalData.parentName.length < 1 || app.globalData.parentName.length > 5) {
+      
+      wx.showModal({
+        title: '',
+        content: '请填写家长姓名',
+        showCancel: false,
+        success: function (res) {
+        }
+      });
+    } else if (app.globalData.wechat == '') {
+      wx.showModal({
+        title: '',
+        content: '请填写微信号码',
+        showCancel: false,
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    } else if (!myPhonereg.test(app.globalData.mobile)) {
+      wx.showModal({
+        title: '',
+        content: '手机号码格式不正确',
+        showCancel: false,
+        success: function (res) {
+        
+        }
+      })
+    } else {
+      wx.navigateTo({
+        url: '../match/match',
+      })
+    }     
   },
 
 
