@@ -134,6 +134,17 @@ Page({
 
         if (res.data.errno == 1) {
           console.log("请求失败");
+          
+          wx.showModal({
+            title: '',
+            content: '请勿重复请求',
+            showCancel: false,
+            success: function (res) {
+              wx.navigateTo({
+                url: '../index/index'
+              })
+            }
+          })
         }else{
           that.setData({
             'matchRes': JSON.parse(res.data.data)
