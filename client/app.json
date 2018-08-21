@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/search/search",
     "pages/match/match",
-    "pages/guide/guide"
+    "pages/guide/guide",
+    "pages/index/2index"
   ],
   "window": {
     "backgroundTextStyle": "light",

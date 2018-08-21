@@ -1,56 +1,95 @@
 //app.js
+
+var app = getApp();
+
 App({
-
   globalData: {
-    userInfo:         null,
-    school:           {name: "", longitude: 0.0, latitude: 0.0},
-    home:             {name: "", longitude: 0.0, latitude: 0.0},
-    parentName:       "",
-    wechat:           "",
-    mobile:           "",
-    searchResult:     Array[10],
-    inputStatus:      "",
-    code:             "",
-    hidden:           true,
+    // userInfo:         null,
+    school: { name: "", longitude: 0.0, latitude: 0.0 },
+    home: { name: "", longitude: 0.0, latitude: 0.0 },
+    parentName: "",
+    wechat: "",
+    mobile: "",
+    searchResult: Array[10],
+    inputStatus: "",
+    code: "",
+    hidden: true,
+    // userInfo_name:    "",
+    userInfo: {
+      nickname: 'Hi,游客',
+      username: '',
+      avatar: 'http://yanxuan.nosdn.127.net/8945ae63d940cc42406c3f67019c5cb6.png',
+      schoolAddr:'',
+      homeAddr:'',
+      phoneNum:'',
+      wxNum:'',
+      isE: null
+    },
   },
-
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    var that = this;
+
+    this.globalData.userInfo.username='李英浩';
+
 
     // 登录
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         var code = res.code;
-        // console.log(code);
         this.globalData.code = code;
-        console.log("wx.login() success")
-      }
-    })
-    
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        console.log("wx.getSetting() success")
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
+      
+        //去后台服务器请求，用户信息
 
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
-        }
+        wx.request({
+          url: 'http://192.168.51.10:8888/api/json/getUserInfo',
+          data: {
+            "code": this.globalData.code,
+          },
+          method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+          header: {// 设置请求的 header
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          success: function (res) {
+            console.log(JSON.stringify(res.data.data));
+            // this.data.matchRes = []
+            // this.data.isShow = true;
+            // console.log(res)
+
+            if (res.data.errno == 1) {
+              console.log("请求失败");
+            } else {
+              that.globalData.userInfo.username = res.data.data.username;
+              that.globalData.userInfo.schoolAddr = res.data.data.schoolAddr;
+              that.globalData.userInfo.homeAddr = res.data.data.homeAddr;
+              that.globalData.userInfo.phoneNum = res.data.data.phoneNum;
+              that.globalData.userInfo.wxNum = res.data.data.wxNum;
+              that.globalData.userInfo.isE = res.data.data.isEmpy;
+              that.globalData.userInfo.isE = false;
+              // wx.setStorageSync(that.globalData.userInfo.username, res.data.data.username);
+              // that.setData({
+              //   'home': JSON.stringify(res.data.data.username)
+              // })
+
+              console.log(JSON.stringify(res.data.data.username));
+              console.log(JSON.stringify(that.globalData.userInfo.isE));
+              // that.onLaunch();
+
+              wx.navigateTo({
+                url: '2index'
+              })
+            };
+          },
+          fail: function (res) {
+            console.log('error: ' + res)
+          }
+        })
       }
     })
+
+
+  },onShow:function(){
+    
   }
+  
 })
