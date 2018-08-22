@@ -99,7 +99,7 @@ Page({
 
   navigator2url: function() {
     wx.switchTab({
-      url: "../index/index",
+      url: "../index/2index",
       success: function() {
         console.log('跳转到index页面成功') // success              
       },

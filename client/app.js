@@ -5,8 +5,16 @@ var app = getApp();
 App({
   globalData: {
     // userInfo:         null,
-    school: { name: "", longitude: 0.0, latitude: 0.0 },
-    home: { name: "", longitude: 0.0, latitude: 0.0 },
+    school: { 
+      name: "", 
+      longitude: 0.0, 
+      latitude: 0.0 
+    },
+    home: { 
+      name: "", 
+      longitude: 0.0, 
+      latitude: 0.0 
+    },
     parentName: "",
     wechat: "",
     mobile: "",
@@ -29,7 +37,7 @@ App({
   onLaunch: function () {
     var that = this;
 
-    this.globalData.userInfo.username='李英浩';
+    // this.globalData.userInfo.username='李英浩';
 
 
     // 登录
@@ -59,12 +67,23 @@ App({
             if (res.data.errno == 1) {
               console.log("请求失败");
             } else {
+              that.globalData.parentName = res.data.data.username;
+              that.globalData.wechat = res.data.data.wxNum;
+              that.globalData.mobile = res.data.data.phoneNum;
+
               that.globalData.userInfo.username = res.data.data.username;
-              that.globalData.userInfo.schoolAddr = res.data.data.schoolAddr;
-              that.globalData.userInfo.homeAddr = res.data.data.homeAddr;
               that.globalData.userInfo.phoneNum = res.data.data.phoneNum;
               that.globalData.userInfo.wxNum = res.data.data.wxNum;
               that.globalData.userInfo.isE = res.data.data.isEmpy;
+              that.globalData.userInfo.schoolAddr = res.data.data.schoolAddr;
+              that.globalData.userInfo.homeAddr = res.data.data.homeAddr;
+              that.globalData.school.name = res.data.data.schoolAddr;
+              that.globalData.school.longitude = res.data.data.schoolAddr_x;
+              that.globalData.school.latitude = res.data.data.schoolAddr_y;
+              that.globalData.home.name = res.data.data.homeAddr;
+              that.globalData.home.longitude = res.data.data.home_x;
+              that.globalData.home.latitude = res.data.data.home_y;
+
               that.globalData.userInfo.isE = false;
               // wx.setStorageSync(that.globalData.userInfo.username, res.data.data.username);
               // that.setData({
@@ -73,6 +92,10 @@ App({
 
               console.log(JSON.stringify(res.data.data.username));
               console.log(JSON.stringify(that.globalData.userInfo.isE));
+
+              console.log(JSON.stringify(that.globalData.school.name));
+
+              console.log(JSON.stringify(that.globalData.home.name));
               // that.onLaunch();
 
               wx.navigateTo({
