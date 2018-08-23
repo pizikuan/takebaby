@@ -263,5 +263,13 @@ Page({
   // 检查input是否合法
   checkInput: function () {
 
+  },
+
+  onShareAppMessage: function () {
+    return {
+      title: app.globalData.shareTitle,
+      desc: app.globalData.shareDesc,
+      path: "pages/index/"
+    }
   }
 })

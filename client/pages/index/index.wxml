@@ -41,7 +41,7 @@
       <!-- <block wx:else> -->
     </view>
 
-    <navigator class="guide-info" url="../guide/guide">流程指引</navigator>
+    <navigator class="guide-info" url="../guide/guide">接送流程</navigator>
 
     <view class="sug_info">
       <text>本市已有{{motto}}个家庭匹配成功</text>
