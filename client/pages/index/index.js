@@ -11,7 +11,8 @@ Page({
     home: '',
     parentName: '',
     wechat: '',
-    mobile: ''
+    mobile: '',
+    isReg:null,
   },
 
   //事件处理函数
@@ -48,16 +49,109 @@ Page({
         }
       })
     }
+
+    //************************************************************************************************************/
+
+    var that = this;
+
+    // this.globalData.userInfo.username='李英浩';
+
+    if (app.globalData.selectFlag){
+
+    }else{
+      // 登录
+      wx.login({
+        success: res => {
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          var code = res.code;
+          // this.globalData.code = code;
+
+          //去后台服务器请求，用户信息
+
+          wx.request({
+            url: 'http://192.168.51.10:8888/api/json/getUserInfo',
+            data: {
+              "code": code,
+            },
+            method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+            header: {// 设置请求的 header
+              'content-type': 'application/x-www-form-urlencoded'
+            },
+            success: function (res) {
+              console.log(JSON.stringify(res.data.data));
+              // this.data.matchRes = []
+              // this.data.isShow = true;
+              // console.log(res)
+
+              if (res.data.errno == 1) {
+                console.log("请求失败");
+              } else {
+
+                app.globalData.school.name = res.data.data.schoolAddr;
+                app.globalData.school.longitude = res.data.data.schoolAddr_x;
+                app.globalData.school.latitude = res.data.data.schoolAddr_y;
+
+                app.globalData.home.name = res.data.data.homeAddr;
+                app.globalData.home.longitude = res.data.data.homeAddr_x;
+                app.globalData.home.latitude = res.data.data.homeAddr_y;
+
+                app.globalData.parentName = res.data.data.username;
+                app.globalData.wechat = res.data.data.wxNum;
+                app.globalData.mobile = res.data.data.phoneNum;
+                app.globalData.isReg = res.data.data.isEmpy;
+
+
+                // that.setGlobalData({
+                //   school: res.data.data.schoolAddr
+                // })
+
+                that.setData({
+                  // app.globalData.school.name: res.data.data.schoolAddr,
+                  school: app.globalData.school.name,
+                  home: app.globalData.home.name,
+                  parentName: app.globalData.parentName,
+                  wechat: app.globalData.wechat,
+                  mobile: app.globalData.mobile,
+                  isReg: app.globalData.isReg,
+                })
+
+
+                // wx.setStorageSync(that.globalData.userInfo.username, res.data.data.username);
+                // that.setData({
+                //   'home': JSON.stringify(res.data.data.username)
+                // })
+
+                console.log(JSON.stringify(res.data.data.username));
+                // console.log(JSON.stringify(that.globalData.userInfo.isE));
+
+                // console.log(JSON.stringify(that.globalData.school.name));
+
+                // console.log(JSON.stringify(that.globalData.home.name));
+                // that.onLaunch();
+
+                // wx.navigateTo({
+                //   url: 'index'
+                // })
+              };
+            },
+            fail: function (res) {
+              console.log('error: ' + res)
+            }
+          })
+        }
+      })
+    }
+    //************************************************************************************************************/
   },
 
-  getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  },
+  // getUserInfo: function (e) {
+  //   console.log(e)
+  //   app.globalData.userInfo = e.detail.userInfo
+  //   this.setData({
+  //     userInfo: e.detail.userInfo,
+  //     hasUserInfo: true
+  //   })
+  // },
 
   bindInputFocus: function (event) {
     console.log(event)
@@ -99,7 +193,7 @@ Page({
 
     // console.log(app.globalData.wechatNum.length);
 
-     if (JSON.stringify(app.globalData.school.name).length < 3) {
+    if (JSON.stringify(app.globalData.school.name).length < 3) {
       wx.showModal({
         title: '',
         content: '请选择学校名称',
@@ -107,7 +201,7 @@ Page({
         success: function (res) {
 
         }
-      })   
+      })
     } else if (JSON.stringify(app.globalData.home.name).length < 3) {
       wx.showModal({
         title: '',
@@ -118,7 +212,7 @@ Page({
         }
       })
     } else if (app.globalData.parentName.length < 1 || app.globalData.parentName.length > 5) {
-      
+
       wx.showModal({
         title: '',
         content: '请填写家长姓名',
@@ -133,7 +227,7 @@ Page({
         content: '请填写微信号码',
         showCancel: false,
         success: function (res) {
-          
+
         }
       })
     } else if (!myPhonereg.test(app.globalData.mobile)) {
@@ -142,14 +236,14 @@ Page({
         content: '手机号码格式不正确',
         showCancel: false,
         success: function (res) {
-        
+
         }
       })
     } else {
       wx.navigateTo({
         url: '../match/match',
       })
-    }   
+    }
   },
   // 生命周期函数--监听页面显示
   onShow: function () {
@@ -158,15 +252,16 @@ Page({
 
   // 读取并显示app.globalData
   syncGlobalData: function () {
-    this.setData({ school:      app.globalData.school.name})
-    this.setData({ home:        app.globalData.home.name})
-    this.setData({ parentName : app.globalData.parentName})
-    this.setData({ wechat:      app.globalData.wechat })
-    this.setData({ mobile:      app.globalData.mobile })
+    this.setData({ school: app.globalData.school.name })
+    this.setData({ home: app.globalData.home.name })
+    this.setData({ parentName: app.globalData.parentName })
+    this.setData({ wechat: app.globalData.wechat })
+    this.setData({ mobile: app.globalData.mobile })
+    this.setData({ isReg: app.globalData.isReg })
   },
 
   // 检查input是否合法
-  checkInput: function() {
+  checkInput: function () {
 
   }
 })

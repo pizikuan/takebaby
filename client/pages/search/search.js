@@ -83,6 +83,8 @@ Page({
     var i = parseInt(index.substr(2))
     console.log(event)
 
+    app.globalData.selectFlag = true;
+
     // 设置学校和家庭住址经纬度
     if (app.globalData.inputStatus == "school") {
       app.globalData.school.name = app.globalData.searchResult[i].name
@@ -99,7 +101,7 @@ Page({
 
   navigator2url: function() {
     wx.switchTab({
-      url: "../index/2index",
+      url: "../index/index",
       success: function() {
         console.log('跳转到index页面成功') // success              
       },
