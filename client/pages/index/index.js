@@ -22,7 +22,15 @@ Page({
     })
   },
 
+  onShow: function () {
+    console.log("index.js - onShow()")
+    wx.navigateTo({
+      url: '../guide/guide'
+    })
+  },
+
   onLoad: function () {
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
