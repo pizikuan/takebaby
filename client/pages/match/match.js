@@ -119,7 +119,8 @@ Page({
         // this.globalData.code = code;
       //后台请求
       wx.request({
-        url: 'http://192.168.51.10:8888/api/json/match',
+        // url: 'http://192.168.51.10:8888/api/json/match',
+        url: 'https://takebaby.f3322.net/api/json/match',
         data: {
           "userName": app.globalData.parentName,
           "wxNum": app.globalData.wechat,
