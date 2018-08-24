@@ -77,7 +77,7 @@ Page({
           //去后台服务器请求，用户信息
 
           wx.request({
-            url: 'http://192.168.51.10:8888/api/json/getUserInfo',
+            url: app.globalData.host+'json/getUserInfo',
             data: {
               "code": code,
             },

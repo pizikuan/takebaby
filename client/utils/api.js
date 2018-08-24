@@ -1,6 +1,8 @@
 'use strict';
-//var HOST_URI = 'https://www.v2ex.com/api/';
-var HOST_URI = 'http://192.168.51.10:8888/api/';
+
+const app = getApp()
+
+var HOST_URI = app.globalData.host
 
 //获取首页信息
 var GET_METCH = 'index.json';
