@@ -277,7 +277,9 @@ Page({
     return {
       title: app.globalData.shareTitle,
       desc: app.globalData.shareDesc,
-      path: "pages/index/"
+      path: "pages/index/index",
+      imageUrl: "/images/hotest.png"
     }
   }
 })
+

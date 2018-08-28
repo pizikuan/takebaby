@@ -28,6 +28,10 @@
   color:red;
 }
 
+.text-link{
+  color: blue;
+}
+
 .empty {
   height: 200rpx;
   /*border: 1rpx solid black;*/
