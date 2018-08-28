@@ -22,7 +22,15 @@ Page({
     })
   },
 
+  onShow: function () {
+    console.log("index.js - onShow()")
+    wx.navigateTo({
+      url: '../guide/guide'
+    })
+  },
+
   onLoad: function () {
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -72,7 +80,8 @@ Page({
             // url: 'http://192.168.51.10:8888/api/json/getUserInfo',
         
             //生产地址:用于测试生产环境
-            url: 'https://takebaby.f3322.net/api/json/getUserInfo',
+            // url: 'https://takebaby.f3322.net/api/json/getUserInfo',
+            url: app.globalData.host+'json/getUserInfo',
             data: {
               "code": code,
             },

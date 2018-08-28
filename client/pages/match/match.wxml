@@ -1,3 +1,7 @@
+<loading hidden="false">匹配中...</loading>
+
+<!--view class="suggestion" hidden="{{matchRes.length}}">未发现匹配用户</view-->
+
 <block wx:for="{{matchRes}}">
   <view class="match-flex">
     <!--view class="match-left-image">李先生</view-->
@@ -22,5 +26,3 @@
 <navigator class="guide-info" url="../guide/guide">接送流程</navigator>
 
 <view class="empty"></view>
-
-<loading hidden="true">匹配中...</loading>

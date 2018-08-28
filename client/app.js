@@ -26,6 +26,7 @@ App({
     isReg:false,
     shareTitle: "2个家庭合作接送孩子上下学，节省一半的工作量",
     shreDesc: "",
+    host: "https://ekunyu.com/api/"
   },
   
   
