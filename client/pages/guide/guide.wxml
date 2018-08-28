@@ -51,4 +51,9 @@
 
   <view class="empty"></view>
 
+  <image src="../../images/fangdiulian.jpg" mode="widthFix"></image>
+
+
+  <view class="empty"></view>
+
 </view>
