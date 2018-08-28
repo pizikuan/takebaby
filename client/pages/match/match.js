@@ -36,8 +36,8 @@ Page({
     that.match();
 
     wx.showModal({
-      title: '提示',
-      content: '请点击右上角左边...按钮，将小程序分享到孩子学校群、班级群、朋友圈，可以极大的增大匹配概率',
+      title: '重要提示',
+      content: '请点击右上角...按钮，将小程序分享到孩子的学校群、班级群、朋友圈，可以极大地增加匹配成功率',
       success: function (res) {
         if (res.confirm) {
           console.log('用户点击确定')
