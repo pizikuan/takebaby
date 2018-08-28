@@ -3,43 +3,49 @@
 
 <view class="page">
   <view class="head2">1. 双方家庭初步接触</view> 
-  <view class='text'>a. 匹配成功后，双方家庭互加微信</view>
-  <view class='text'>b. 加微信后，2个家庭通过微信和电话确定初步的合作意向</view>
+  <view class='text'><text decode="true">a.&nbsp;</text><text>匹配成功后，双方家庭互加微信</text></view>
+  <view class='text'><text decode="true">b.&nbsp;</text><text>互加微信后，2个家庭通过微信和电话确定初步的合作意向</text></view>
 
 
   <view class="head2">2. 验证对方信息</view> 
-  <view class='text'>a. 双方家庭约定在各自家中见面</view>
-  <view class='text'>b. 验证对方的重要信息（包括但不限于双方家长身份证、房产证、工作证、支付宝芝麻信用等）以确定对方家长身份、住址等是否属实</view>
+  <view class='text'><text decode="true">a.&nbsp;</text><text>双方家庭约定在各自家中见面</text></view>
+  <view class='text'><text decode="true">b.&nbsp;</text><text>验证对方的重要信息（包括但不限于双方家长身份证、房产证、工作证、支付宝芝麻信用等）以确定对方家长身份、住址等是否属实</text></view>
 
   <view class="head2">3. 测试接送流程</view> 
-  <view class='text'>a. 2个家庭花费10天时间来测试接送流程</view>
-  <view class='text'>b. A家庭接送5天，B家庭家长必须全程陪同</view>
-  <view class='text'>c. B家庭接送5天，A家庭家长必须全程陪同</view>
+  <view class='text'><text decode="true">a.&nbsp;</text><text>2个家庭花费10天时间来测试接送流程</text></view>
+  <view class='text'><text decode="true">b.&nbsp;</text><text>A家长接送5天，B家长必须全程陪同</text></view>
+  <view class='text'><text decode="true">c.&nbsp;</text><text>B家长接送5天，A家长必须全程陪同</text></view>
 
 
-  <view class="head2">4. 接送流程细节</view> 
-  <view class='text'>a. 购买儿童防丢链（参见文末图），防丢链可以在流程上进一步保障儿童的安全</view>  
-  <view class='text'>b. 假定A，B为家长，A1，B1分别为两家孩子，今天为A家长去接送</view>
-  <view class='text1'>i. 放学时候如果A1先出来，则A用防丢链把自己与A1孩子链在一起，等B1出来后，把A1和B1链在一起</view>
-  <view class='text1'>ii. 上学时候，家长用防丢链把A1，B1两个孩子联在一起</view>
-  <view class='text'>c. 假定A，B为家长，A1，B1分别为两家孩子，今天为A家长去接送</view>
+  <view class="head2">4. 接送标准流程</view> 
 
-  <view class="head2">5. 接到后流程细节</view> 
-  <view class='text'>a. 双方家庭约定在各自家中见面</view>
-  <view class='text'>b. 验证对方的重要信息（包括但不限于双方家长身份证、房产证、工作证、支付宝芝麻信用等）以确定对方家长身份、住址等是否属实</view>
+  <view class='text'><text decode="true">a.&nbsp;</text><text>购买儿童防丢链（参见文末图），防丢链可以在流程上进一步保障儿童的安全</text></view>  
+  <view class='text'><text decode="true">b.&nbsp;</text><text>假定A，B为家长，A1，B1分别为两家孩子，今天为A家长接送</text></view>
+  <view class='text1'><text decode="true">i.&nbsp;</text><text>放学时，如果A1先出来，则A用防丢链把自己与A1孩子链在一起，等B1出来后，把A1和B1链在一起，然后乘坐自驾车或公共交通回家</text></view>
+  <view class='text1'><text decode="true">ii.</text><text>上学时，家长用防丢链把A1，B1两个孩子联在一起</text></view>
+
+  <view class='text'><text decode="true">c.&nbsp;</text><text>防丢链建议全程佩戴</text></view>
+  <view class='text1'><text decode="true">i.&nbsp;</text><text>如果家长为自驾车，上车后可以打开防丢链，但是在从家里到车上，以及从车上到学校这段路建议必须佩戴</text></view>
+  <view class='text1'><text decode="true">ii.</text><text>如果家长使用公共交通进行接送，必须全程佩戴</text></view>
+
+
+  <view class="head2">5. 放学后流程细节</view> 
+  <view class='text'><text decode="true">a.&nbsp;</text><text>A，B两个家庭可以协商，接到孩子放学后，进行如下处理（仍假设当天A家长接送A1, B1两个孩子）
+</text></view>
+  <view class='text1'><text decode="true">i.&nbsp;</text><text>B家中有人的情况下，将对方孩子送回家或B家长单位</text></view>
+  <view class='text1'><text decode="true">ii.</text><text>B家中无人的情况下，将B1带到自己家中写作业，待B家长下班后去A家中接孩子B1</text></view>
 
 
   <view class="head2">6. 签订互助接娃协议</view> 
-  <view class='text'>a. 双方家长确定合作意向后，签订互助接娃协议</view>
+  <view class='text'><text decode="true">a.&nbsp;</text><text>双方家长确定合作意向后，签订互助接送孩子上下学协议</text></view>
 
 
   <view class="head2">7. 开始正式互助接送</view> 
-  <view class='text'>a. 签署协议后，双发家长开始正式的互助接送</view>
+  <view class='text'><text decode="true">a.&nbsp;</text><text>签署协议后，双发家长开始正式的互助接送</text></view>
 
 
   <view class="head2">8. 客服联系方式</view> 
-  <view class='text'>a. 客服QQ：2075251733</view>
-
+  <view class='text'><text decode="true">a.&nbsp;</text><text class="text-red">QQ：2075251733</text></view>
 
   <view class="empty"></view>
 

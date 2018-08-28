@@ -33,18 +33,25 @@ Page({
   onShow: function () {
     that = this
     console.log("onShow");
-    this.match();
+    that.match();
+
+    wx.showModal({
+      title: '重要提示',
+      content: '请点击右上角...按钮，将小程序分享到孩子的学校群、班级群、朋友圈，可以极大地增加匹配成功率',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+
   },
 
 
   //开启匹配后台调用
   match: function () {
-    // post数据给服务器获取匹配结果
-    // console.log(app.globalData.home);
-    // console.log(app.globalData.school);
-    // console.log(app.globalData.parentName);
-    // console.log(app.globalData.wechat);
-    // console.log(app.globalData.mobile);
   
     // 登录
     wx.login({
@@ -127,8 +134,14 @@ Page({
   },
 
   onLoad: function () {
+
     wx.showShareMenu({
       withShareTicket: false
     })
+  },
+/*
+  onShow: function () {
+
   }
+*/
 })
