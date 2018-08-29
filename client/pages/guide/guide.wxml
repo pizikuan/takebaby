@@ -42,7 +42,6 @@
   <view class='text'><text decode="true">c.&nbsp;</text><text class="text-link" bindtap="downloadProtocol">点击下载协议范本</text></view>
   
 
-
   <view class="head2">7. 开始正式互助接送</view> 
   <view class='text'><text decode="true">a.&nbsp;</text><text>签署协议后，双发家长开始正式的互助接送</text></view>
 
