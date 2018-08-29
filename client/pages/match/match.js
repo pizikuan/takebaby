@@ -12,7 +12,6 @@ Page({
   },
 
   onPullDownRefresh: function() {
-    this.fetchData();
     console.log('onPullDownRefresh', new Date())
   },
 
@@ -25,14 +24,12 @@ Page({
   },
 
   onLoad: function (){ 
-    this.fetchData()
     console.log("match.js - onLoad() - isMathching" + app.globalData.isMatching)
   },
 
 
   onShow: function () {
     that = this
-    console.log("onShow");
     that.match();
 
     wx.showModal({
@@ -118,9 +115,14 @@ Page({
       withShareTicket: false
     })
   },
-/*
-  onShow: function () {
 
+  onShareAppMessage: function () {
+    return {
+      title: app.globalData.shareTitle,
+      desc: app.globalData.shareDesc,
+      path: "pages/index/index",
+      imageUrl: "/images/share.jpg"
+    }
   }
-*/
 })
+

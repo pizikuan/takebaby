@@ -38,6 +38,8 @@
 
   <view class="head2">6. 签订互助接娃协议</view> 
   <view class='text'><text decode="true">a.&nbsp;</text><text>双方家长确定合作意向后，签订互助接送孩子上下学协议</text></view>
+  <view class='text'><text decode="true">b.&nbsp;</text><text class="text-link" bindtap="downloadProtocol">点击下载协议范本</text></view>
+  
 
 
   <view class="head2">7. 开始正式互助接送</view> 
@@ -46,6 +48,11 @@
 
   <view class="head2">8. 客服联系方式</view> 
   <view class='text'><text decode="true">a.&nbsp;</text><text class="text-red">QQ：2075251733</text></view>
+
+  <view class="empty"></view>
+
+  <image src="../../images/fangdiulian.jpg" mode="widthFix"></image>
+
 
   <view class="empty"></view>
 

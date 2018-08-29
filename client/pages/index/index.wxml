@@ -9,7 +9,7 @@
         text class="userinfo-nickname">{{userInfo.nickName}}</text
       </block>
     </view> -->
-    <view class="intro">2个家庭合作接送孩子上下学，节省一半工作量和费用。匹配在同一学校上学且家庭住址距离小于3km的2个家庭，每家负责接送孩子一周
+    <view class="intro">2个家庭合作接送孩子上下学，节省50%工作量和费用。匹配在同一学校上学且家庭住址距离小于3km的2个家庭，每家负责接送孩子一周
     </view>
     <view class="flex-wrp">
       <text class="input_title">孩子学校</text>
