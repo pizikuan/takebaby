@@ -26,7 +26,8 @@ App({
     isReg:false,
     shareTitle: "2个家庭合作接送孩子上下学，节省50%工作量和费用",
     shreDesc: "",
-    host: "https://ekunyu.com/api/"
+    // host: "http://192.168.51.10:8888/api/",
+    host: "https://ekunyu.com/api/",
   },
   
   
