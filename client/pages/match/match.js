@@ -62,7 +62,7 @@ Page({
       //后台请求
       wx.request({
         // url: 'http://192.168.51.10:8888/api/json/match',
-        url: app.globalData.host + 'json/getUserInfo',
+        url: app.globalData.host + 'json/match',
         data: {
           "userName": app.globalData.parentName,
           "wxNum": app.globalData.wechat,
@@ -74,28 +74,7 @@ Page({
         method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
         header: {// 设置请求的 header
           'content-type': 'application/x-www-form-urlencoded'
-        },
-        success: function (res) {
-          // console.log(JSON.stringify(res.data)
-          // this.data.matchRes = []
-          // this.data.isShow = true;
-          // console.log(res)
-        //后台请求
-        wx.request({
-          url: app.globalData.host + 'json/match',
-          data: {
-            "userName": app.globalData.parentName,
-            "wxNum": app.globalData.wechat,
-            "phoneNum": app.globalData.mobile,
-            "code": code,
-            "home": JSON.stringify(app.globalData.home),
-            "school": JSON.stringify(app.globalData.school)
-          },
-          method: 'POST',     // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-          header: {           // 设置请求的 header
-            'content-type': 'application/x-www-form-urlencoded'
-          },
-          success: function (res) {
+        },success: function (res) {
             // console.log(JSON.stringify(res.data)
             // this.data.matchRes = []
             // this.data.isShow = true;
