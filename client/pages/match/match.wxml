@@ -7,7 +7,7 @@
     <!--view class="match-left-image">李先生</view-->
     <view class="match-middle-block">
       <view class="match-middle-upper">{{item.username}}</view>
-      <view class="match-middle-item">微信：{{item.wxNum}}</view>
+      <view class="match-middle-item">微信：<text class="text-blue" data-text="{{item.wxNum}}" bindtap='copyToClipboard'>{{item.wxNum}}</text></view>
       <view class="match-middle-item">小区：{{item.homeAddr}}</view>
       <view class="match-middle-item">学校：{{item.schoolAddr}}</view>
     </view>

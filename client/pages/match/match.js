@@ -123,6 +123,23 @@ Page({
       path: "pages/index/index",
       imageUrl: "/images/share.jpg"
     }
+  },
+
+  copyToClipboard: function (e) {
+    console.log(e)
+    wx.setClipboardData({
+      data: e.currentTarget.dataset.text,
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            wx.showToast({
+              title: '微信号已复制'
+            })
+          }
+        })
+      }
+    })
   }
+
 })
 

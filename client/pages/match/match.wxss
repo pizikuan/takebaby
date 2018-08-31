@@ -73,3 +73,7 @@
   height: 200rpx;
   /*border: 1rpx solid black;*/
 }
+
+.text-blue{
+  color: #09f;
+}

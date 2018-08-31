@@ -29,7 +29,18 @@ Page({
     })
   },
 
+  modifyMathCount: function () {
+    var d = new Date()
+    var count = Math.round(2997 + (d.getTime() - 1535694716909) / 517365)
+    console.log(d.getTime())
+    this.setData({
+      motto: count
+    })
+  },
+
   onLoad: function () {
+
+    this.modifyMathCount()
 
     if (app.globalData.userInfo) {
       this.setData({
